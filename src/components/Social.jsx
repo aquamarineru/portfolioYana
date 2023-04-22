@@ -1,0 +1,31 @@
+import React from 'react'
+import { AiOutlineInstagram } from 'react-icons/ai'
+import {FaTiktok, FaTelegramPlane} from 'react-icons/fa'
+import Link from 'next/link'
+
+const Social = () => {
+  return (
+    <>
+      <ul className='flex justify-between items-center max-w-[270px] dark:text-light'>
+        <li className="p-4 hover:text-hover">
+          <Link href="https://www.instagram.com/yana.korobeinyk/" target="_blank" >
+            <AiOutlineInstagram size={30} />
+          </Link>
+        </li>
+        <li className="p-4 hover:text-hover">
+          <Link href="https://www.tiktok.com/@yana.korobeinyk" target='_blank'>
+            <FaTiktok size={30} />
+          </Link>
+        </li>
+        <li className="p-4 hover:text-hover">
+          <Link href="https://t.me/korobeinyk" target="_blank">
+            <FaTelegramPlane size={30} />
+          </Link>
+        </li>
+      </ul>
+     {/*  <a href="#" className='border border-solid border-tomatoes text-tomatoes p-3 rounded-md hover:bg-hover hover:text-light hover:border-none dark:hover:text-dark'>Contact me</a> */}
+    </>
+  )
+}
+
+export default Social
