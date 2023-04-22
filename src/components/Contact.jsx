@@ -1,3 +1,6 @@
+// fix social media icons in mobile version
+// fixed
+
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,11 +12,11 @@ const Contact = () => {
 
 
   return (
-    <div className='py-10 md:m-0' id='contact'>
+    <div className='pt-24 md:m-0' id='contact'>
     <h2 className='font-ricordi text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase'>Contact me</h2>
     <h3 className='font-tomatoes text-xl text-dark dark:text-light text-center font-bold md:text-2xl'>get in touch</h3>
-    <div className='py-16 flex flex-col-reverse items-center justify-center md:flex-row md:items-start md:gap-20'>
-    <ul className='flex flex-col justify-between items-center dark:text-light'>
+    <div className='pt-16 px-10 flex flex-col-reverse items-center justify-center md:flex-row md:items-start md:gap-10'>
+    <ul className='flex justify-between items-center dark:text-light md:flex-col'>
         <li className="p-4 hover:text-hover">
           <Link href="https://www.instagram.com/yana.korobeinyk/" target="_blank" >
             <AiOutlineInstagram size={30} />

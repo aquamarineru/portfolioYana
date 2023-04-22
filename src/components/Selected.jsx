@@ -48,7 +48,7 @@ const Selected = ({ carouselData }) => {
         containerClass="carousel-container"
 /*         removeArrowOnDeviceType={["tablet", "mobile"]} */
         itemClass="carousel-item-padding-40-px"
-        className="inline-block py-16"
+        className="inline-block pt-16"
       >
         {carouselData.map((slide, index) => (
           <div key={index} className="flex justify-center items-center w-full">
@@ -62,10 +62,10 @@ const Selected = ({ carouselData }) => {
           </div>
         ))}
       </Carousel>
-      <div className="flex justify-center items-center mt-7">
-      <button className="px-8 py-2 text-light border bg-tomatoes border-tomatoes rounded hover:bg-hover hover:border-none font-ricordi uppercase">
-        <Link href="/portfolio">View all</Link>
-      </button>
+      <div className="flex justify-center items-center mt-5">
+        <button className="px-8 py-2 text-light border bg-tomatoes border-tomatoes rounded hover:bg-hover hover:border-none font-ricordi uppercase">
+          <Link href="/portfolio">View all</Link>
+        </button>
       </div>
     </div>
   );
