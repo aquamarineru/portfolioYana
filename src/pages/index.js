@@ -12,9 +12,9 @@ export default function Home({ carouselData }) {
   return (
     <>
     <Head>
-        <title>Greek Love Photography</title>
-        <meta property="og:title" name="title" content="Greek Love Photography" />
-        <meta property="og:description" name="description" content="Yana Korobeinyk, a renowned photographer from Greece specializing in wedding, romance, and portrait photography, captures your most cherished moments with elegance and passion." />
+        <title>Mykonos Love Photography</title>
+        <meta property="og:title" name="title" content="Mykonos Love Photography" />
+        <meta property="og:description" name="description" content="Yana Korobeinyk is a photographer based in Mykonos Island who specializes in wedding, love story, and portrait photography. Her photography captures the essence of love and the emotions that radiate happiness." />
         <meta property="og:image" content="/about.jpg"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="" />

@@ -1,3 +1,5 @@
+//check mobile menu 
+
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -83,16 +85,16 @@ const Header = () => {
                 } right-0 bottom-0 flex flex-col justify-center items-center w-full h-screen bg-light text-center dark:bg-dark`}
                 >
                     <ul className="font-ricordi uppercase">
-                        <li className="p-4 text-xl hover:text-hover">
+                        <li className="p-4 text-xl hover:text-hover" onClick={handleMenu}>
                         <Link href="#about">About</Link>
                         </li>
-                        <li className="p-4 text-xl hover:text-hover">
+                        <li className="p-4 text-xl hover:text-hover" onClick={handleMenu}>
                         <Link href="/portfolio">Portfolio</Link>
                         </li>
-                        <li className="p-4 text-xl hover:text-hover">
+                        <li className="p-4 text-xl hover:text-hover" onClick={handleMenu}>
                         <Link href="#services">Services</Link>
                         </li>
-                        <li className="p-4 text-xl hover:text-hover">
+                        <li className="p-4 text-xl hover:text-hover" onClick={handleMenu}>
                         <Link href="#contact">Contact</Link>
                         </li>
                     </ul>

@@ -1,3 +1,5 @@
+//check speed of the carousel
+
 import React from 'react';
 import { urlFor } from '../../lib/client';
 import Link from 'next/link';
@@ -41,14 +43,14 @@ const Selected = ({ carouselData }) => {
         ssr={true}
         infinite={true}
         autoPlay={true}
-        autoPlaySpeed={3000}
+        autoPlaySpeed={5000}
         keyBoardControl={true}
-        customTransition="all .5"
-        transitionDuration={500}
+        customTransition="all .7 ease-in-out"
+        transitionDuration={1000}
         containerClass="carousel-container"
 /*         removeArrowOnDeviceType={["tablet", "mobile"]} */
         itemClass="carousel-item-padding-40-px"
-        className="inline-block pt-16"
+        className="inline-block pt-10"
       >
         {carouselData.map((slide, index) => (
           <div key={index} className="flex justify-center items-center w-full">
