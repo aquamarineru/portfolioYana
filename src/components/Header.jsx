@@ -63,10 +63,10 @@ const Header = () => {
                         <Link href="/portfolio">Portfolio</Link>
                     </li>
                     <li className='p-4 hover:text-hover'>
-                        <Link href="#services">Services</Link>
+                        <Link href="/#services">Services</Link>
                     </li>
                     <li className='p-4 hover:text-hover'>
-                        <Link href="#contact">Contact</Link>
+                        <Link href="/#contact">Contact</Link>
                     </li>
                 </ul>    
                 {/* Theme Button */}    
@@ -92,10 +92,10 @@ const Header = () => {
                         <Link href="/portfolio">Portfolio</Link>
                         </li>
                         <li className="p-4 text-xl hover:text-hover" onClick={handleMenu}>
-                        <Link href="#services">Services</Link>
+                        <Link href="/#services">Services</Link>
                         </li>
                         <li className="p-4 text-xl hover:text-hover" onClick={handleMenu}>
-                        <Link href="#contact">Contact</Link>
+                        <Link href="/#contact">Contact</Link>
                         </li>
                     </ul>
                     <Social />
