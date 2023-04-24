@@ -25,7 +25,7 @@ const Photo = ({ photo }) => {
                <CgArrowLongLeft className="text-tomatoes" size={20}/> Back
             </Link>
             <div className='pt-32 px-7'>
-                <h2 className='text-tomatoes font-ricordi text-2xl text-center md:text-4xl lg:text-5xl font-bold uppercase'>{photo.title}</h2>
+                <h2 className='text-tomatoes font-ricordi text-2xl text-center md:text-4xl md:w-[500px] md:mx-auto lg:text-5xl lg:w-[800px] font-bold uppercase '>{photo.title}</h2>
                 <p className='text-right text-dark dark:text-light lg:text-lg mb-10'>{date}</p>
                 <Content body={photo.body}/>
             </div>

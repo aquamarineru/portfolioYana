@@ -45,7 +45,7 @@ const Selected = ({ carouselData }) => {
         autoPlay={true}
         autoPlaySpeed={5000}
         keyBoardControl={true}
-        customTransition="all .7 ease-in-out"
+        customTransition="all .7 ease-in"
         transitionDuration={1000}
         containerClass="carousel-container"
 /*         removeArrowOnDeviceType={["tablet", "mobile"]} */

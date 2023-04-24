@@ -30,7 +30,7 @@ const Header = () => {
 
 
   return (
-    <div style={{backgroundColor: `${color}`}} className="fixed left-0 top-0 z-20 w-full ease-in duration-300">
+    <header style={{backgroundColor: `${color}`}} className="fixed left-0 top-0 z-20 w-full ease-in duration-300">
         <div className="max-w-[1024px] m-auto flex justify-between items-center p-4 text-dark dark:text-light md:max-w-[600px] lg:max-w-[900px] xl:max-w-[1200px]">
             <Link href="/">
                 <div className='cursor-pointer flex flex-col items-center justify-center gap-0'>
@@ -48,7 +48,7 @@ const Header = () => {
                     width={45}
                     height={45}
                     priority={true}
-                    className="object-contain md:h-[60px] md:w-[60px]"
+                    className="object-contain md:w-14 md:h-14 lg:w-16 lg:h-16"
                 />}
                 <span className='font-ricordi uppercase text-xs'>Photography</span>
                 </div>
@@ -56,7 +56,7 @@ const Header = () => {
             <div className='flex items-center gap-4 justify-between'>
                 <ul className='hidden sm:flex font-ricordi font-bold uppercase'>
                     <li className='p-4 hover:text-hover'>
-                        <Link href="#about">About</Link>
+                        <Link href="/#about">About</Link>
                     </li> 
                     
                     <li className='p-4 hover:text-hover'>
@@ -86,7 +86,7 @@ const Header = () => {
                 >
                     <ul className="font-ricordi uppercase">
                         <li className="p-4 text-xl hover:text-hover" onClick={handleMenu}>
-                        <Link href="#about">About</Link>
+                        <Link href="/#about">About</Link>
                         </li>
                         <li className="p-4 text-xl hover:text-hover" onClick={handleMenu}>
                         <Link href="/portfolio">Portfolio</Link>
@@ -101,7 +101,7 @@ const Header = () => {
                     <Social />
                 </div>
         </div>
-    </div>
+    </header>
   )
 }
 
