@@ -1,22 +1,52 @@
-// fix social media icons in mobile version
-// fixed
-
-import React from 'react'
+import React, { useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { AiOutlineInstagram } from 'react-icons/ai'
 import {FaTiktok, FaTelegramPlane} from 'react-icons/fa'
+import emailjs from '@emailjs/browser'
+import Swal from 'sweetalert2'
+
+
 
 
 const Contact = () => {
+  const form = useRef();
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+    const { name, email, message } = e.target.elements;
 
+    const templateParams = {
+      from_name: name.value,
+      from_email: email.value,
+      message: message.value,
+    };
+
+    emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, e.target, process.env.NEXT_PUBLIC_USER_ID)
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+      Swal.fire({
+        icon: 'success',
+        title: 'Message sent successfully!',
+        showConfirmButton: false,
+        timer: 1500
+      });
+      e.target.reset();
+      }, (error) => {
+        console.log('FAILED...', error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Error sending message. Please try again later.', 
+        });
+      });
+  };
   return (
     <div className='pt-24 md:m-0' id='contact'>
-    <h2 className='font-ricordi text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase'>Contact me</h2>
-    <h3 className='font-tomatoes text-xl text-dark dark:text-light text-center font-bold md:text-2xl'>get in touch</h3>
-    <div className='pt-16 px-10 flex flex-col-reverse items-center justify-center md:flex-row md:items-start md:gap-10'>
-    <ul className='flex justify-between items-center dark:text-light md:flex-col'>
+      <h2 className='font-ricordi text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase'>Contact me</h2>
+      <h3 className='font-tomatoes text-xl text-dark dark:text-light text-center font-bold md:text-2xl'>get in touch</h3>
+      <div className='pt-16 px-10 flex flex-col-reverse items-center justify-center md:flex-row md:items-start md:gap-10'>
+      <ul className='flex justify-between items-center dark:text-light md:flex-col'>
         <li className="p-4 hover:text-hover">
           <Link href="https://www.instagram.com/yana.korobeinyk/" target="_blank" >
             <AiOutlineInstagram size={30} />
@@ -32,8 +62,8 @@ const Contact = () => {
             <FaTelegramPlane size={30} />
           </Link>
         </li>
-      </ul>
-        <form action=""  className='m-auto flex flex-col text-center md:max-w-[400px] gap-2 md:text-left md:m-0 relative mb-2'>
+        </ul>
+        <form ref={form} onSubmit={sendEmail} action=""  className='m-auto flex flex-col text-center md:max-w-[400px] gap-2 md:text-left md:m-0 relative mb-2'>
             <div className='relative mb-2 h-[4rem]'>
             <label className='font-ricordi uppercase text-dark dark:text-light absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 bg-light dark:bg-dark'>Name</label>
                 <input 
@@ -55,7 +85,7 @@ const Contact = () => {
                 <div className='relative mb-2 h-[4rem]'>
                 <label className='font-ricordi uppercase text-dark dark:text-light absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 bg-light dark:bg-dark'>Message</label>
                     <textarea 
-                    name='project' 
+                    name='message' 
                     cols="30" 
                     rows="5" 
                     placeholder='Send me your message'

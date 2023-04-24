@@ -23,7 +23,6 @@ export default function portfolio({initialPhotos, total}) {
             setLoading(false)
 
         }catch(error) {
-            console.log(error)
             setLoading(false)
         }
     }

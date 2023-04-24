@@ -17,7 +17,7 @@ export default function Home({ carouselData }) {
         <meta property="og:description" name="description" content="Yana Korobeinyk is a photographer based in Mykonos Island who specializes in wedding, love story, and portrait photography. Her photography captures the essence of love and the emotions that radiate happiness." />
         <meta property="og:image" content="/about.jpg"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="" />
+        <link rel="icon" href="/logo.png" />
       </Head>
       <Cover />
       <About />
@@ -35,7 +35,6 @@ export const getStaticProps = async () => {
     }
   `;
   const carouselData = await client.fetch(query);
-  console.log(carouselData); 
 
   return {
     props: {

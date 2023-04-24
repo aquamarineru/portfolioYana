@@ -27,7 +27,6 @@ const responsive = {
 };
 
 const Selected = ({ carouselData }) => {
-  console.log(carouselData);
   return (
     <div className="min-h-max">
       <h2 className="font-ricordi text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase">
