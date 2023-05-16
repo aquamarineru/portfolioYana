@@ -4,12 +4,12 @@ import Social from './Social'
 
 const About = () => {
   return (
-      <div className=' py-24 md:m-0' id='about'>
+      <div className=' pt-24 md:m-0' id='about'>
         <h2 className='font-ricordi text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase'>About me</h2>
         <h3 className='font-tomatoes text-xl text-dark dark:text-light text-center font-bold md:text-2xl'>who I am</h3>
         
         <div className='p-7 py-16 flex flex-col-reverse items-center justify-center md:flex-row md:items-start md:justify-around'>
-            <div className='m-auto flex flex-col text-center gap-5 md:max-w-[400px] md:text-left md:m-0 '>
+            <div className='m-auto flex flex-col items-center text-center gap-5 md:max-w-[400px] md:text-left md:m-0 '>
                 <p className='text-dark dark:text-light '>
                 Oh, hey! Nice to&nbsp;meet you! My&nbsp;name is&nbsp;Yana and I&rsquo;m photographer based in&nbsp;Mykonos.  
                 </p>
@@ -25,7 +25,7 @@ const About = () => {
                 <p className='text-dark dark:text-light'>
                 Can&rsquo;t wait to&nbsp;create beautiful pictures with you!
                 </p>
-                <Social className="mt-5 " />
+                <Social className="mt-5" />
             </div>
             <div className="flex flex-wrap justify-center mb-5 ">
             <Image
