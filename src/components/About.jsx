@@ -25,7 +25,7 @@ const About = () => {
                 <p className='text-dark dark:text-light'>
                 Can&rsquo;t wait to&nbsp;create beautiful pictures with you!
                 </p>
-                <Social className="mt-5" />
+                <Social className="mt-5 " />
             </div>
             <div className="flex flex-wrap justify-center mb-5 ">
             <Image

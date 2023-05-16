@@ -6,7 +6,7 @@ import Link from 'next/link'
 const Social = () => {
   return (
     <>
-      <ul className='flex justify-between items-center max-w-[270px] dark:text-light'>
+      <ul className='flex justify-between items-center max-w-[320px] dark:text-light'>
         <li className="p-4 hover:text-hover">
           <Link href="https://www.instagram.com/yana.korobeinyk/" target="_blank" >
             <AiOutlineInstagram size={30} />
