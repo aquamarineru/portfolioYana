@@ -40,7 +40,9 @@ export default function portfolio({initialPhotos, total}) {
             <h2 className='font-ricordi text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase mb-10'>Portfolio</h2>
             <PhotosGrid >
                 {photos.map(photo => {
-                    return <Photo key={photo.slug.current} {...photo} />
+                    if (photo.slug && photo.slug.current) {
+                        return <Photo key={photo.slug.current} {...photo} />;
+                      }
                 }
 
                 )}

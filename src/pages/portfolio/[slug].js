@@ -25,6 +25,7 @@ const Photo = ({ photo }) => {
                <CgArrowLongLeft className="text-tomatoes" size={20}/> Back
             </Link>
             <div className='pt-32 px-7'>
+            {console.log(photo)}
                 <h2 className='text-tomatoes font-ricordi text-2xl text-center md:text-4xl md:w-[500px] md:mx-auto lg:text-5xl lg:w-[800px] font-bold uppercase '>{photo.title}</h2>
                 <p className='text-right text-dark dark:text-light lg:text-lg mb-10'>{date}</p>
                 <Content body={photo.body}/>
@@ -34,7 +35,7 @@ const Photo = ({ photo }) => {
 }
 export default Photo
 
-export async function getStaticPaths() {
+/* export async function getStaticPaths() {
     const query = `*[_type == "photo"] {
         slug {
             current
@@ -43,12 +44,37 @@ export async function getStaticPaths() {
     const photos = await client.fetch(query)
     const paths = photos.map((photo) => ({
         params: { slug: photo.slug.current },
+    
     }))
     return {
         paths,
         fallback: 'blocking'
     }
+} */
+export async function getStaticPaths() {
+    const query = `*[_type == "photo" && defined(slug.current)] {
+        'slug': slug.current
+    }`
+    const photos = await client.fetch(query)
+
+    if (!photos) {
+        // Handle the case where photos is null or undefined
+        // You can return an appropriate fallback or error message
+        return {
+            notFound: true, // Return a 404 page or fallback component
+        }
+    }
+
+    const paths = photos.map((photo) => ({
+        params: { slug: String(photo.slug) },
+    }))
+
+    return {
+        paths,
+        fallback: 'blocking',
+    }
 }
+
 
 export async function getStaticProps({ params: { slug } }) {
     const query = `*[_type == "photo" && slug.current == '${slug}'][0]`
