@@ -28,18 +28,17 @@ export default function Home({ carouselData }) {
     </>
   )
 }
-export const getStaticProps = async () => {
+export async function getServerSideProps() {
   const query = `
     *[_type == "carousel"] {
       image 
     }
   `;
-  const carouselData = await client.fetch(query);
+  const carouselData = await  client.fetch(query);
 
   return {
     props: {
       carouselData,
     },
-    revalidate: 60, 
   };
 };
