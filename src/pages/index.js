@@ -5,6 +5,8 @@ import Selected from '@/components/Selected'
 import { client } from '../../lib/client'
 import MyServices from '@/components/myServices/MyServices'
 import Contact from '@/components/Contact'
+import Cookies from '@/components/Cookies'
+
 
 
 
@@ -19,6 +21,7 @@ export default function Home({ carouselData }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
       </Head> 
+      <Cookies />
       <Cover />
       <About />
       <Selected carouselData={carouselData} />

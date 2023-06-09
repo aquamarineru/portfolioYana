@@ -41,7 +41,6 @@ const PrevArrow = ({ onClick }) => {
 
 
 const Selected = ({ carouselData }) => {
-//console.log(carouselData);
   const settings = {
     infinite: true,
     speed: 500,
@@ -99,7 +98,6 @@ const Selected = ({ carouselData }) => {
               height={300}
               className="rounded m-auto object-cover w-[350px] h-[450px] z-0 items-center"
             />
-            {console.log(urlFor(slide.image.asset).url())}
           </div>
         ))}
       </Slider>
