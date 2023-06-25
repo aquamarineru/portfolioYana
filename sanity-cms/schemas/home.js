@@ -90,7 +90,7 @@ export default {
                 
                 {
                     name: 'button',
-                    title: 'Κείμενο πλήκτρου',
+                    title: 'Button',
                     type: 'string',
                 },
             ],

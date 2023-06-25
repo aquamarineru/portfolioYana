@@ -1,7 +1,7 @@
 import '@/styles/globals.css'
-import Header from '@/components/Header'
 import { useState, useEffect } from 'react';
-import Footer from '@/components/Footer';
+import Layout from '@/components/Layout';
+
 
 export const useDarkMode = () => {
   const [theme, setTheme] = useState('light');
@@ -19,9 +19,9 @@ export const useDarkMode = () => {
 export default function App({ Component, pageProps }) {
   return (
     <div className="bg-light dark:bg-dark min-h-max">
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </div>
     )
 }

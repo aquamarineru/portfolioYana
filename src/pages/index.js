@@ -10,19 +10,11 @@ import Cookies from '@/components/Cookies'
 
 
 
-export default function Home({ carouselData }) {
+export default function Home({ carouselData, homeData }) {
   return (
     <>
-    <Head>
-        <title>Mykonos Love Photography</title>
-        <meta property="og:title" name="title" content="Mykonos Love Photography" />
-        <meta property="og:description" name="description" content="Yana Korobeinyk is a photographer based in Mykonos Island who specializes in wedding, love story, and portrait photography. Her photography captures the essence of love and the emotions that radiate happiness." />
-        <meta property="og:image" content="/about.jpg"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/logo.png" />
-      </Head> 
       <Cookies />
-      <Cover />
+      <Cover homeData={homeData} />
       <About />
       <Selected carouselData={carouselData} />
       <MyServices />
@@ -32,16 +24,31 @@ export default function Home({ carouselData }) {
   )
 }
 export async function getServerSideProps() {
-  const query = `
-    *[_type == "carousel"] {
-      image 
-    }
-  `;
-  const carouselData = await  client.fetch(query);
+  try {
+    const carouselQuery = `
+      *[_type == "carousel"] {
+        image 
+      }
+    `;
+    const carouselData = await client.fetch(carouselQuery);
 
-  return {
-    props: {
-      carouselData,
-    },
-  };
+    const homeQuery = `
+      *[_type == "home"]{
+        content,
+        "videoFileUrl": content.videoAnimation.fallback.asset->url,
+      }
+    `;
+    const homeData = await client.fetch(homeQuery);
+
+    return {
+      props: {
+        carouselData,
+        homeData
+      },
+    };
+  } catch (error) {
+    // Log the error and return empty props or a 500 status, based on your requirements
+    console.error(error);
+    return { props: {} };
+  }
 };
