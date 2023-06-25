@@ -83,14 +83,14 @@ const Selected = ({ carouselData }) => {
     ]
 };
   return (
-    <div className="px-4 py-11">
+    <div className="px-4 py-11 lg:px-14">
       <h2 className="font-ricordi text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase">
         Selected Work
       </h2>
       <h3 className='font-tomatoes text-xl text-dark dark:text-light text-center font-bold md:text-2xl'>my portfolio</h3>
       <Slider {...settings} className='mt-10 m-auto'>
-        {carouselData.map((slide) => (
-          <div className="flex flex-col items-center m-auto">
+        {carouselData.map((slide, index) => (
+          <div className="flex flex-col items-center m-auto" key={index}>
             <Image
               src={urlFor(slide.image.asset).url()}
               alt={slide.image.caption || slide.meta_title}

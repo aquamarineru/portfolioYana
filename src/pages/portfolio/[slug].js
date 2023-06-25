@@ -34,22 +34,6 @@ const Photo = ({ photo }) => {
 }
 export default Photo
 
-/* export async function getStaticPaths() {
-    const query = `*[_type == "photo"] {
-        slug {
-            current
-        }
-    }`
-    const photos = await client.fetch(query)
-    const paths = photos.map((photo) => ({
-        params: { slug: photo.slug.current },
-    
-    }))
-    return {
-        paths,
-        fallback: 'blocking'
-    }
-} */
 export async function getStaticPaths() {
     const query = `*[_type == "photo" && defined(slug.current)] {
         'slug': slug.current
@@ -57,10 +41,8 @@ export async function getStaticPaths() {
     const photos = await client.fetch(query)
 
     if (!photos) {
-        // Handle the case where photos is null or undefined
-        // You can return an appropriate fallback or error message
         return {
-            notFound: true, // Return a 404 page or fallback component
+            notFound: true,
         }
     }
 

@@ -7,7 +7,7 @@ import Link from "next/link"
 import { CgArrowLongLeft } from 'react-icons/cg'
 
 const LOAD_MORE = 6
-export default function portfolio({initialPhotos, total}) {
+export default function Portfolio({initialPhotos, total}) {
     const [photos, setPhotos] = useState(initialPhotos)
     const [loadedAmount, setLoadedAmount] = useState(LOAD_MORE)
     const [ loading, setLoading ] = useState(false)
