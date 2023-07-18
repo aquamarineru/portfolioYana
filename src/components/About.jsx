@@ -34,6 +34,7 @@ const About = () => {
                 width={200}
                 height={200}
                 className='rounded-full object-cover z-0 md:w-[280px] md:h-auto md:rounded-none lg:w-auto'
+                priority
                 />
             </div>
         </div>

@@ -104,6 +104,7 @@ const Contact = () => {
                 width={300}
                 height={600}
                 className='rounded-full object-cover z-0 md:w-[300px] md:h-auto md:rounded-none lg:w-auto'
+                priority
                 />
         </div>
     </div>

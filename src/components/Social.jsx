@@ -23,7 +23,6 @@ const Social = () => {
           </Link>
         </li>
       </ul>
-     {/*  <a href="#" className='border border-solid border-tomatoes text-tomatoes p-3 rounded-md hover:bg-hover hover:text-light hover:border-none dark:hover:text-dark'>Contact me</a> */}
     </>
   )
 }
