@@ -1,7 +1,10 @@
+import {ImagesIcon} from '@sanity/icons'
+
 export default {
     name: 'carousel',
     type: 'document',
     title: 'Carousel',
+    icon: ImagesIcon,
     fields: [
       {
         name: 'image',

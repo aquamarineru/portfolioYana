@@ -82,6 +82,9 @@ const Selected = ({ carouselData }) => {
       }
     ]
 };
+if (!carouselData) {
+  return <div>Loading...</div>;
+} 
   return (
     <div className="px-4 py-11 lg:px-14">
       <h2 className="font-ricordi text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase">

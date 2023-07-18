@@ -9,20 +9,21 @@ import Cookies from '@/components/Cookies'
 
 
 
-export default function Home({ carouselData, homeData }) {
+
+export default function Home({ carouselData, homeData, servicesData }) {
   return (
     <>
       <Cookies />
       <Cover homeData={homeData} />
       <About />
       <Selected carouselData={carouselData} />
-      <MyServices />
+      <MyServices servicesData={servicesData} />
       <Contact />
 
     </>
   )
 }
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
     const carouselQuery = `
       *[_type == "carousel"] {
@@ -39,10 +40,15 @@ export async function getServerSideProps() {
     `;
     const homeData = await client.fetch(homeQuery);
 
+    const servicesQuery = '*[_type == "service"]';
+    const servicesData = await client.fetch(servicesQuery);
+
+
     return {
       props: {
         carouselData,
-        homeData
+        homeData,
+        servicesData,
       },
     };
   } catch (error) {
