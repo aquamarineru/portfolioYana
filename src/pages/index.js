@@ -1,6 +1,5 @@
 import Cover from '@/components/Cover'
 import About from '@/components/About'
-import Head from 'next/head'
 import Selected from '@/components/Selected'
 import { client } from '../../lib/client'
 import MyServices from '@/components/myServices/MyServices'
@@ -47,7 +46,6 @@ export async function getServerSideProps() {
       },
     };
   } catch (error) {
-    // Log the error and return empty props or a 500 status, based on your requirements
     console.error(error);
     return { props: {} };
   }

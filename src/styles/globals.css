@@ -34,3 +34,11 @@
     -ms-overflow-style: none; /* Internet Explorer and Edge */
     scrollbar-width: none; /* Firefox */
   }
+  @keyframes type {
+    from { box-shadow: inset -3px 0 0 #888; }
+    to { box-shadow: inset -3px 0 0 transparent; }
+}
+
+.animate-type {
+    animation: type .5s alternate infinite;
+}
