@@ -42,7 +42,7 @@ const Contact = () => {
       });
   };
   return (
-    <div className='pt-24 md:m-0' id='contact'>
+    <div className='pt-24 md:m-0 font-display' id='contact'>
       <h2 className='font-ricordi text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase'>Contact me</h2>
       <h3 className='font-tomatoes text-xl text-dark dark:text-light text-center font-bold md:text-2xl'>get in touch</h3>
       <div className='pt-16 px-10 flex flex-col-reverse items-center justify-center md:flex-row md:items-start md:gap-10'>

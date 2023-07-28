@@ -7,7 +7,7 @@ function Layout({children}) {
   return (
     <div>
         <Head>
-        <title>Mykonos Love Photography | Yana Korobeinyk </title>
+        <title>Mykonos Love Story Wedding Portrait Photography | Yana Korobeinyk </title>
         <meta property="og:title" name="title" content="Mykonos Love Story Wedding Portrait Photography" />
         <meta property="og:description" name="description" content="Yana Korobeinyk is a photographer based in Mykonos Island who specializes in wedding, love story, and portrait photography. Her photography captures the essence of love and the emotions that radiate happiness." />
         <meta name="keywords" content="photography, fashion photography, weddings photography, mykonos photography, photographer, wedding photographer" />

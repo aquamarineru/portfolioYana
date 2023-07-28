@@ -12,7 +12,7 @@ const Cover = ({ homeData }) => {
       <div className='absolute top-0 left-0 right-0 bottom-0 dark:bg-dark/10 z-[2]'>
       {image && (
         <div className='absolute  top-0 left-0 right-0 bottom-0 z-0'>
-          <Image src={urlFor(image).url()}  alt={banner} width={800} height={800} className='object-cover w-full h-full md:w-full ' />
+          <Image src={urlFor(image).url()}  alt={banner} width={1400} height={800} className='object-cover w-full h-full' />
         </div>
       )}
         <h1 className='px-5 font-tomatoes text-tomatoes text-bold text-md text-center absolute top-[25%] left-[10%]  md:left-[30%] md:text-xl lg:left-[25%] lg:text-2xl xl:text-4xl xl:left-[30%]'>{banner}</h1>
