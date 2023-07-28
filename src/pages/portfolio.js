@@ -29,8 +29,8 @@ export default function Portfolio({initialPhotos, total}) {
     return (
         <>
         <Head>
-            <title>Photography Portfolio | Weddings, Romance & Portraits</title>
-            <meta property="og:title" name="title" content="Photography Portfolio | Weddings, Romance & Portraits" />
+            <title>Photography Portfolio | Weddings, Love Story & Portraits in Mykonos Island</title>
+            <meta property="og:title" name="title" content="Photography Portfolio | Weddings, Love Story & Portraits in Mykonos Island Greece" />
             <meta property="og:description" name="description" content="Yana Korobeinyk, a renowned photographer from Greece specializing in wedding, romance, and portrait photography, captures your most cherished moments with elegance and passion." />
         </Head>
         <div className="h-full scroll-m-2 w-full pt-28">
