@@ -4,7 +4,7 @@ import Social from './Social'
 
 const About = () => {
   return (
-      <div className=' pt-24 md:m-0' id='about'>
+      <div className=' pt-24 md:m-0 font-display' id='about'>
         <h2 className='font-ricordi text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase'>About me</h2>
         <h3 className='font-tomatoes text-xl text-dark dark:text-light text-center font-bold md:text-2xl'>who I am</h3>
         

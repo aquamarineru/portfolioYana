@@ -48,17 +48,17 @@ const Contact = () => {
       <div className='pt-16 px-10 flex flex-col-reverse items-center justify-center md:flex-row md:items-start md:gap-10'>
       <ul className='flex justify-between items-center dark:text-light md:flex-col'>
         <li className="p-4 hover:text-hover">
-          <Link href="https://www.instagram.com/yana.korobeinyk/" target="_blank" >
+          <Link href="https://www.instagram.com/yana.korobeinyk/" aria-label="Follow me on instagram" target="_blank" >
             <AiOutlineInstagram size={30} />
           </Link>
         </li>
         <li className="p-4 hover:text-hover">
-          <Link href="https://www.tiktok.com/@yana.korobeinyk" target="_blank">
+          <Link href="https://www.tiktok.com/@yana.korobeinyk" aria-label="Follow me on tiktok" target="_blank">
             <FaTiktok size={30} />
           </Link>
         </li>
         <li className="p-4 hover:text-hover">
-          <Link href="https://t.me/korobeinyk" target="_blank">
+          <Link href="https://t.me/korobeinyk" aria-label="Contact me on telegram" target="_blank">
             <FaTelegramPlane size={30} />
           </Link>
         </li>
