@@ -1,12 +1,15 @@
 {
   "name": "portfolioYana",
+  "description": "Photographer portfolio website",
+  "author": "codecrafters.online",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-sitemap": "next-sitemap"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
@@ -21,6 +24,7 @@
     "emailjs-com": "^3.2.0",
     "next": "13.3.0",
     "next-sanity-image": "^6.0.0",
+    "next-sitemap": "^4.1.8",
     "postcss": "8.4.22",
     "react": "18.2.0",
     "react-cookie-consent": "^8.0.1",

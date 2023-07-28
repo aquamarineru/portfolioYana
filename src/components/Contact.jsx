@@ -101,8 +101,8 @@ const Contact = () => {
             <Image
                 src='/contact.jpeg'
                 alt='contact me'
-                width={300}
-                height={600}
+                width={200}
+                height={400}
                 className='rounded-full object-cover z-0 md:w-[300px] md:h-auto md:rounded-none lg:w-auto'
                 priority
                 />
