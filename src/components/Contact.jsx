@@ -63,7 +63,7 @@ const Contact = () => {
           </Link>
         </li>
         </ul>
-        <form ref={form} onSubmit={sendEmail} action=""  className='m-auto flex flex-col text-center md:max-w-[400px] gap-2 md:text-left md:m-0 relative mb-2'>
+        <form ref={form} onSubmit={sendEmail} action="#"  className='m-auto flex flex-col text-center md:max-w-[400px] gap-2 md:text-left md:m-0 relative mb-2'>
             <div className='relative mb-2 h-[4rem]'>
             <label className='font-ricordi uppercase text-dark dark:text-light absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 bg-light dark:bg-dark'>Name</label>
                 <input 

@@ -105,9 +105,11 @@ if (!carouselData) {
         ))}
       </Slider>
       <div className="flex justify-center items-center mt-5">
-        <button className="px-8 py-2 text-light border bg-tomatoes border-tomatoes rounded hover:bg-hover hover:border-none font-ricordi uppercase">
-          <Link href="/portfolio">View all</Link>
-        </button>
+        <Link href="/portfolio">
+          <button className="px-8 py-2 text-light border bg-tomatoes border-tomatoes rounded hover:bg-hover hover:border-none font-ricordi uppercase">
+            View all
+          </button>
+        </Link>
       </div>
     </div>
   );
