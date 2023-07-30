@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /_error
-Disallow: /portfolio/*
+Disallow: /
 
 Sitemap: https://www.yanakorobeinykphoto.com/sitemap.xml
