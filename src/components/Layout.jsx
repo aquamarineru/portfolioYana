@@ -4,6 +4,12 @@ import Header from './Header'
 import Footer from './Footer'
 
 function Layout({children}) {
+  const gtagScript = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-148SJTXCS0');
+  `
   return (
     <div>
       <Head>
@@ -18,14 +24,7 @@ function Layout({children}) {
         <link rel="icon" href="/logo.png" />
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-148SJTXCS0"></script>
-        <script>
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-148SJTXCS0');
-          `}
-        </script>
+        <script dangerouslySetInnerHTML={{ __html: gtagScript }}></script>
       </Head> 
       <header>
         <Header />
