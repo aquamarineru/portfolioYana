@@ -53,18 +53,18 @@ const Header = () => {
             </Link>
             <div className='flex items-center gap-4 justify-between'>
                 <ul className='hidden sm:flex font-ricordi font-bold uppercase'>
-                    <li className='p-4 hover:text-hover'>
-                        <Link href="/#about">About</Link>
+                    <li className='p-4 '>
+                        <Link href="/#about" className='hover:bg-hover px-3 py-2 rounded'>About</Link>
                     </li> 
                     
-                    <li className='p-4 hover:text-hover'>
-                        <Link href="/portfolio">Portfolio</Link>
+                    <li className='p-4'>
+                        <Link href="/portfolio" className='hover:bg-hover px-3 py-2 rounded'>Portfolio</Link>
                     </li>
-                    <li className='p-4 hover:text-hover'>
-                        <Link href="/#services">Services</Link>
+                    <li className='p-4 '>
+                        <Link href="/#services" className='hover:bg-hover px-3 py-2 rounded'>Services</Link>
                     </li>
-                    <li className='p-4 hover:text-hover'>
-                        <Link href="/#contact">Contact</Link>
+                    <li className='p-4 '>
+                        <Link href="/#contact" className='hover:bg-hover px-3 py-2 rounded'>Contact</Link>
                     </li>
                 </ul>    
                 {/* Theme Button */}    
@@ -83,17 +83,17 @@ const Header = () => {
                 } right-0 bottom-0 flex flex-col justify-center items-center w-full h-screen bg-light text-center dark:bg-dark`}
                 >
                     <ul className="font-ricordi uppercase">
-                        <li className="p-4 text-xl hover:text-hover" onClick={handleMenu}>
-                        <Link href="/#about">About</Link>
+                        <li className="p-4 text-xl " onClick={handleMenu}>
+                        <Link href="/#about" className='hover:bg-hover px-3 py-2 rounded'>About</Link>
                         </li>
-                        <li className="p-4 text-xl hover:text-hover" onClick={handleMenu}>
-                        <Link href="/portfolio">Portfolio</Link>
+                        <li className="p-4 text-xl" onClick={handleMenu}>
+                        <Link href="/portfolio" className='hover:bg-hover px-3 py-2 rounded'>Portfolio</Link>
                         </li>
-                        <li className="p-4 text-xl hover:text-hover" onClick={handleMenu}>
-                        <Link href="/#services">Services</Link>
+                        <li className="p-4 text-xl" onClick={handleMenu}>
+                        <Link href="/#services" className='hover:bg-hover px-3 py-2 rounded'>Services</Link>
                         </li>
-                        <li className="p-4 text-xl hover:text-hover" onClick={handleMenu}>
-                        <Link href="/#contact">Contact</Link>
+                        <li className="p-4 text-xl " onClick={handleMenu}>
+                        <Link href="/#contact" className='hover:bg-hover px-3 py-2 rounded'>Contact</Link>
                         </li>
                     </ul>
                     <Social />
