@@ -4,12 +4,7 @@ import Header from './Header'
 import Footer from './Footer'
 
 function Layout({children}) {
-  const gtagScript = `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-148SJTXCS0');
-  `
+
   return (
     <div>
       <Head>
@@ -22,10 +17,7 @@ function Layout({children}) {
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="google-site-verification" content="HOQY6rh1u_zcAir9F2-Tizh8c_N3sndycb7INYWfDUg" />
         <meta name="p:domain_verify" content="f3749dab05bc8dee0e9227f67939b075"/>
-        <link rel="icon" href="/logo.png" />
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-148SJTXCS0"></script>
-        <script dangerouslySetInnerHTML={{ __html: gtagScript }}></script>
+        <link rel="icon" href="/logo.webp" />
       </Head> 
       <header>
         <Header />

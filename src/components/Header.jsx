@@ -34,14 +34,14 @@ const Header = () => {
                 <div className='cursor-pointer flex flex-col items-center justify-center gap-0'>
                 {colorTheme === 'light' 
                 ? <Image
-                src="/logoDark.png"
+                src="/logoDark.webp"
                 alt="logo"
                 width={50}
                 height={50}
                 className="object-contain md:h-[60px] md:w-[60px]"
             /> 
                 : <Image
-                    src="/logo.png"
+                    src="/logo.webp"
                     alt="logo"
                     width={45}
                     height={45}

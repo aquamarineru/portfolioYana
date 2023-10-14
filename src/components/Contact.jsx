@@ -99,7 +99,7 @@ const Contact = () => {
         </form>
         <div className="flex flex-wrap justify-center mb-5 ">
             <Image
-                src='/contact.jpeg'
+                src='/contact.webp'
                 alt='contact me'
                 width={200}
                 height={400}
