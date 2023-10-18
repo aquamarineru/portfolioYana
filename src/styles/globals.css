@@ -31,8 +31,8 @@
   }
   
   .scrollbar-hide {
-    -ms-overflow-style: none; /* Internet Explorer and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
   }
   @keyframes type {
     from { box-shadow: inset -3px 0 0 #888; }
