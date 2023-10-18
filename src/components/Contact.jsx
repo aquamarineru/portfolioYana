@@ -8,7 +8,6 @@ import Swal from 'sweetalert2'
 
 
 
-
 const Contact = () => {
   const form = useRef();
 
@@ -48,24 +47,43 @@ const Contact = () => {
       <div className='pt-16 px-10 flex flex-col-reverse items-center justify-center md:flex-row md:items-start md:gap-10'>
       <ul className='flex justify-between items-center dark:text-light md:flex-col'>
         <li className="p-4 hover:text-hover">
-          <Link href="https://www.instagram.com/yana.korobeinyk/" aria-label="Follow me on instagram" target="_blank" >
+          <a 
+          href="https://www.instagram.com/yana.korobeinyk/" 
+          aria-label="Follow me on instagram" 
+          target="_blank" 
+          rel="noopener noreferrer">
             <AiOutlineInstagram size={30} />
-          </Link>
+          </a>
         </li>
         <li className="p-4 hover:text-hover">
-          <Link href="https://www.tiktok.com/@yana.korobeinyk" aria-label="Follow me on tiktok" target="_blank">
+          <a 
+          href="https://www.tiktok.com/@yana.korobeinyk" 
+          aria-label="Follow me on tiktok" 
+          target="_blank"
+          rel="noopener noreferrer">
             <FaTiktok size={30} />
-          </Link>
+          </a>
         </li>
         <li className="p-4 hover:text-hover">
-          <Link href="https://t.me/korobeinyk" aria-label="Contact me on telegram" target="_blank">
+          <a 
+          href="https://t.me/korobeinyk" 
+          aria-label="Contact me on telegram" 
+          target="_blank"
+          rel="noopener noreferrer">
             <FaTelegramPlane size={30} />
-          </Link>
+          </a>
         </li>
         </ul>
-        <form ref={form} onSubmit={sendEmail} action="#"  className='m-auto flex flex-col text-center md:max-w-[400px] gap-2 md:text-left md:m-0 relative mb-2'>
+        <form 
+        ref={form} 
+        onSubmit={sendEmail} 
+        action=""  
+        className='m-auto flex flex-col text-center md:max-w-[400px] gap-2 md:text-left md:m-0 relative mb-2'>
             <div className='relative mb-2 h-[4rem]'>
-            <label className='font-ricordi uppercase text-dark dark:text-light absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 bg-light dark:bg-dark'>Name</label>
+            <label 
+            className='font-ricordi uppercase text-dark dark:text-light absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 bg-light dark:bg-dark'>
+              Name
+              </label>
                 <input 
                 type="text" 
                 name="name" 
@@ -74,7 +92,10 @@ const Contact = () => {
                 className="border-[1px] border-tomatoes rounded-md px-3 py-3 mt-2 w-full bg-light dark:bg-dark"/>
             </div>
             <div className='relative mb-2 h-[4rem]'>
-                <label className='font-ricordi uppercase text-dark dark:text-light absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 bg-light dark:bg-dark'>Email</label>
+                <label 
+                className='font-ricordi uppercase text-dark dark:text-light absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 bg-light dark:bg-dark'>
+                  Email
+                  </label>
                 <input 
                     type="email" 
                     name="email"  
@@ -83,7 +104,10 @@ const Contact = () => {
                     className="border-[1px] border-tomatoes rounded-md px-3 py-3 mt-2 w-full bg-light dark:bg-dark"/>
                 </div>
                 <div className='relative mb-2 h-[4rem]'>
-                <label className='font-ricordi uppercase text-dark dark:text-light absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 bg-light dark:bg-dark'>Message</label>
+                <label 
+                className='font-ricordi uppercase text-dark dark:text-light absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 bg-light dark:bg-dark'>
+                  Message
+                  </label>
                     <textarea 
                     name='message' 
                     cols="30" 
@@ -108,9 +132,7 @@ const Contact = () => {
                 />
         </div>
     </div>
-      
     </div>
   )
 }
-
 export default Contact
