@@ -29,12 +29,13 @@ const About = () => {
             </div>
             <div className="flex flex-wrap justify-center mb-5 ">
             <Image
-                src='/about.jpg'
+                src='/about.webp'
                 alt='about'
                 width={200}
                 height={400}
+                sizes='(max-width: 768px) 100vw, 400px'
                 className='rounded-full object-cover z-0 md:w-[280px] md:h-auto md:rounded-none lg:w-auto'
-                priority
+                priority={true}
                 />
             </div>
         </div>
