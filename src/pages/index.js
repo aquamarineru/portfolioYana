@@ -50,6 +50,7 @@ export async function getStaticProps() {
         homeData,
         servicesData,
       },
+      revalidate: 60,
     };
   } catch (error) {
     console.error(error);
