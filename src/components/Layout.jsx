@@ -3,13 +3,14 @@ import Head from 'next/head'
 import Header from './Header'
 import Footer from './Footer'
 
-function Layout({children}) {
+function Layout({ children, seo }) {
+  const { seoTitle, seoDescription, seoImage } = seo || {}
 
   return (
     <div>
-      <Head>
-        <title>Mykonos Love Story Wedding Portrait Photography | Yana Korobeinyk </title>
-        <meta property="og:description" name="description" content="Yana Korobeinyk is a photographer based in Mykonos Island who specializes in wedding, love story, and portrait photography. Her photography captures the essence of love and the emotions that radiate happiness." />
+  {/*     <Head>
+        <title>{seo?.seoTitle || 'Greece Love Story Wedding Portrait Photography | Yana Korobeinyk '}  </title>
+        <meta property="og:description" name="description" content={seoDescription} />
         <meta name="keywords" content="photography, fashion photography, weddings photography, mykonos photography, photographer, wedding photographer" />
         <meta property="og:image" content="/about.jpg"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,7 +19,7 @@ function Layout({children}) {
         <meta name="google-site-verification" content="HOQY6rh1u_zcAir9F2-Tizh8c_N3sndycb7INYWfDUg" />
         <meta name="p:domain_verify" content="f3749dab05bc8dee0e9227f67939b075"/>
         <link rel="icon" href="/logo.webp" />
-      </Head> 
+      </Head>  */}
       <header>
         <Header />
       </header>
