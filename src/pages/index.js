@@ -8,13 +8,13 @@ import Cookies from '@/components/Cookies'
 import Layout from '@/components/Layout'
 
 
-export default function Home({ carouselData, homeData, servicesData }) {
+export default function Home({ carouselData, homeData, servicesData, aboutData }) {
 
   return (
     <>
         <Cookies />
         <Cover homeData={homeData} />
-        <About />
+        <About aboutData={aboutData} />
         <Selected carouselData={carouselData} />
         <MyServices servicesData={servicesData} />
         <Contact />
@@ -24,12 +24,6 @@ export default function Home({ carouselData, homeData, servicesData }) {
 }
 export async function getStaticProps() {
   try {
-    const carouselQuery = `
-      *[_type == "carousel"] {
-        image 
-      }
-    `;
-    const carouselData = await client.fetch(carouselQuery);
 
     const homeQuery = `
       *[_type == "home"]{
@@ -45,7 +39,23 @@ export async function getStaticProps() {
       }
     `;
     const homeData = await client.fetch(homeQuery);
+    
+    const aboutQuery = `
+    *[_type == "about"]{
+      title,
+      subtitle,
+      image,
+      content
+    }
+  `;
+    const aboutData = await client.fetch(aboutQuery);
 
+    const carouselQuery = `
+    *[_type == "carousel"] {
+      image 
+    }
+  `;
+    const carouselData = await client.fetch(carouselQuery);
     const servicesQuery = '*[_type == "service"]';
     const servicesData = await client.fetch(servicesQuery);
 
@@ -54,6 +64,7 @@ export async function getStaticProps() {
       props: {
         carouselData,
         homeData,
+        aboutData,
         servicesData,
       },
       revalidate: 60,

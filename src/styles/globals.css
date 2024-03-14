@@ -42,3 +42,6 @@
 .animate-type {
     animation: type .5s alternate infinite;
 }
+.block-content {
+  margin-bottom: 1em;
+}
