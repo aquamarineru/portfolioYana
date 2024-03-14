@@ -1,14 +1,10 @@
+import { FcSpeaker } from "react-icons/fc";
 export default {
     name: 'feedback',
     type: 'document',
     title: 'Feedback',
+    icon: FcSpeaker,
     fields: [
-      {
-        name: 'meta_title',
-        title: 'Meta Title',
-        type: 'string',
-        validation: Rule => Rule.required(),
-      },
       {
         name: 'feedback_items',
         title: 'Feedback Items',

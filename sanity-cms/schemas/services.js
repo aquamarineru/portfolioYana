@@ -1,10 +1,10 @@
-import {StarIcon} from '@sanity/icons'
+import { FcPhotoReel } from "react-icons/fc";
 
 export default {
     name: 'service',
     title: 'Service',
     type: 'document',
-    icon: StarIcon,
+    icon: FcPhotoReel,
     fields: [
       {
         name: 'name',

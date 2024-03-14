@@ -1,10 +1,10 @@
-import {ImagesIcon} from '@sanity/icons'
+import { FcSlrBackSide } from "react-icons/fc";
 
 export default {
     name: 'carousel',
     type: 'document',
     title: 'Carousel',
-    icon: ImagesIcon,
+    icon: FcSlrBackSide,
     fields: [
       {
         name: 'image',

@@ -1,11 +1,11 @@
 import {defineField, defineType} from 'sanity'
-import {ImageIcon} from '@sanity/icons'
+import { FcPicture } from "react-icons/fc";
 
 export default defineType({
     name: 'photo',
     title: 'Photo',
     type: 'document',
-    icon: ImageIcon,
+    icon: FcPicture,
 
     fields: [
       defineField({
