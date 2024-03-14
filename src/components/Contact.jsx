@@ -81,8 +81,8 @@ const Contact = () => {
         className='m-auto flex flex-col text-center md:max-w-[400px] gap-2 md:text-left md:m-0 relative mb-2'>
             <div className='relative mb-2 h-[4rem]'>
             <label 
-            className='font-ricordi uppercase text-dark dark:text-light absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 bg-light dark:bg-dark'>
-              Name
+            className='font-light text-dark/70 dark:text-light absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 bg-light dark:bg-dark'>
+              Name *
               </label>
                 <input 
                 type="text" 
@@ -93,8 +93,8 @@ const Contact = () => {
             </div>
             <div className='relative mb-2 h-[4rem]'>
                 <label 
-                className='font-ricordi uppercase text-dark dark:text-light absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 bg-light dark:bg-dark'>
-                  Email
+                className='font-light text-dark/70 dark:text-light absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 bg-light dark:bg-dark'>
+                  Email *
                   </label>
                 <input 
                     type="email" 
@@ -104,15 +104,32 @@ const Contact = () => {
                     className="border-[1px] border-tomatoes rounded-md px-3 py-3 mt-2 w-full bg-light dark:bg-dark"/>
                 </div>
                 <div className='relative mb-2 h-[4rem]'>
+                  <label className='font-light text-dark/70 dark:text-light absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 bg-light dark:bg-dark'>Instagram *</label>
+                  <input type="text" name="instagram" placeholder='@' className="border-[1px] border-tomatoes rounded-md px-3 py-3 mt-2 w-full bg-light dark:bg-dark"/>
+                </div>
+                <div className='relative mb-2 h-[4rem]'>
                 <label 
-                className='font-ricordi uppercase text-dark dark:text-light absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 bg-light dark:bg-dark'>
-                  Message
+                  htmlFor="weddingDate" 
+                  className='font-light text-dark/70 dark:text-light absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 bg-light dark:bg-dark'>
+                  Wedding/Shoot Date *
+                </label>
+                    <input 
+                      type="date" 
+                      name="weddingDate" 
+                      id="weddingDate"
+                      required
+                      className="border-[1px] border-tomatoes rounded-md px-3 py-3 mt-2 w-full bg-light dark:bg-dark"/>
+                </div>
+                <div className='relative mb-2 h-[4rem]'>
+                <label 
+                className='font-light text-dark/70 dark:text-light absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 bg-light dark:bg-dark'>
+                  Message *
                   </label>
                     <textarea 
                     name='message' 
                     cols="30" 
-                    rows="5" 
-                    placeholder='Send me your message'
+                    rows="3" 
+                    placeholder='Tell me about your wedding or shoot plans, ideas, and dreams. *'
                     required
                     className="border-[1px] border-tomatoes rounded-md px-3 py-3 mt-2 w-full bg-light dark:bg-dark">
                     </textarea>
