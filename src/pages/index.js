@@ -71,6 +71,6 @@ export async function getStaticProps() {
     };
   } catch (error) {
     console.error(error);
-    return { props: {} };
+    return { props: {homeData: []} };
   }
 };

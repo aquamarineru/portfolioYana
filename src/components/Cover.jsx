@@ -12,8 +12,10 @@ const Cover = ({ homeData }) => {
 return (
   <>
     <Head>
-    <title>{data.seoTitle || 'Greece Love Story Wedding Portrait Photography | Yana Korobeinyk'}  </title>
+    <title>{data.seoTitle ? data.seoTitle : 'Greece Love Story Wedding Portrait Photography | Yana Korobeinyk'}  </title>
+    <meta property="og:title" content={data.seoTitle || 'Greece Love Story Wedding Portrait Photography | Yana Korobeinyk'} />
     <meta property="og:description" name="description" content={data.seoDescription} />
+    <meta name="description" content={data.seoDescription || 'Wedding Photographer Greece, Mykonos, Santorini, Paros, '} />
     <meta name="keywords" content={seoKeywords} />
     <meta property="og:image" content={urlFor(data.seoImage).url()} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
