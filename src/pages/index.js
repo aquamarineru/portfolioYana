@@ -11,7 +11,7 @@ import Layout from '@/components/Layout'
 export default function Home({ carouselData, homeData, servicesData, aboutData }) {
 
   return (
-    <>
+    <Layout homeData={homeData}>
         <Cookies />
         <Cover homeData={homeData} />
         <About aboutData={aboutData} />
@@ -19,7 +19,7 @@ export default function Home({ carouselData, homeData, servicesData, aboutData }
         <MyServices servicesData={servicesData} />
         <Contact />
 
-    </>
+    </Layout>
   )
 }
 export async function getStaticProps() {

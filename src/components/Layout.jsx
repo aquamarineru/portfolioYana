@@ -1,14 +1,16 @@
 import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
+import Head from 'next/head'
 
-function Layout({ children, seo }) {
-  const { seoTitle, seoDescription, seoImage } = seo || {}
+function Layout({ children }) {
 
   return (
     <div>
-  {/*     <Head>
+  <Head>
         <title>{seo?.seoTitle || 'Greece Love Story Wedding Portrait Photography | Yana Korobeinyk '}  </title>
+        <meta property="og:title" content={seo?.seoTitle || 'Greece Love Story Wedding Portrait Photography | Yana Korobeinyk'} />
+        <meta property="description" name="description" content={seo?.seoDescription} />
         <meta property="og:description" name="description" content={seoDescription} />
         <meta name="keywords" content="photography, fashion photography, weddings photography, mykonos photography, photographer, wedding photographer" />
         <meta property="og:image" content="/about.jpg"/>
@@ -18,7 +20,7 @@ function Layout({ children, seo }) {
         <meta name="google-site-verification" content="HOQY6rh1u_zcAir9F2-Tizh8c_N3sndycb7INYWfDUg" />
         <meta name="p:domain_verify" content="f3749dab05bc8dee0e9227f67939b075"/>
         <link rel="icon" href="/logo.webp" />
-      </Head>  */}
+      </Head>  
       <header>
         <Header />
       </header>
