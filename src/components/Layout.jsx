@@ -16,17 +16,17 @@ const data = Array.isArray(seoData) ? seoData[0] || {} : {};
       <link rel="canonical" href={data.canonicalUrl} />
 
       {/* Open Graph / Facebook */}
-      <meta property="og:type" content={data.ogType || 'website'} />
-      <meta property="og:title" content={data.ogTitle || data.pageTitle} />
-      <meta property="og:description" content={data.ogDescription || data.metaDescription} />
-      <meta property="og:image" content={urlFor(data.ogImage).url()} />
-      <meta property="og:url" content={data.canonicalUrl} />
+<meta property="og:type" content={data.ogType || 'website'} />
+<meta property="og:title" content={data.ogTitle || data.pageTitle} />
+<meta property="og:description" content={data.ogDescription || data.metaDescription} />
+<meta property="og:image" content={urlFor(data.ogImage).url()} />
+<meta property="og:url" content={data.canonicalUrl} />
 
-      {/* Twitter Card */}
-      <meta name="twitter:card" content={urlFor(data.ogImage).url()} />
-      <meta name="twitter:title" content={data.ogTitle || data.pageTitle} />
-      <meta name="twitter:description" content={data.ogDescription || data.metaDescription} />
-      <meta name="twitter:image" content={urlFor(data.ogImage).url()} />
+{/* Twitter Card */}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={data.ogTitle || data.pageTitle} />
+<meta name="twitter:description" content={data.ogDescription || data.metaDescription} />
+<meta name="twitter:image" content={urlFor(data.ogImage).url()} />
 
       {/* Additional tags for enhancing discoverability and web standards */}
       <meta name="robots" content={data.robotsDirective || 'index, follow'} />
