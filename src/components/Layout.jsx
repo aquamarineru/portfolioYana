@@ -23,7 +23,7 @@ const data = Array.isArray(seoData) ? seoData[0] || {} : {};
       <meta property="og:url" content={data.canonicalUrl} />
 
       {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:card" content={urlFor(data.ogImage).url()} />
       <meta name="twitter:title" content={data.ogTitle || data.pageTitle} />
       <meta name="twitter:description" content={data.ogDescription || data.metaDescription} />
       <meta name="twitter:image" content={urlFor(data.ogImage).url()} />

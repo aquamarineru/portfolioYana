@@ -22,7 +22,83 @@ console.log(seoData)
     </Layout>
   )
 }
-export async function getStaticProps() {
+//write fuct server side rendering
+
+export async function getServerSideProps() {
+  try{
+    const seoQuery = `
+    *[_type == "seo"]{
+      pageTitle,
+      metaDescription,
+      metaKeywords,
+      robotsDirective,
+      sitemapPriority,
+      noFollowLinks,
+      noIndexPage,
+      canonicalUrl,
+        ogTitle,
+        ogDescription,
+        "ogImage": ogImage.asset->url,
+        ogType
+      
+    }`;
+  const seoData = await client.fetch(seoQuery);
+
+  const homeQuery = `
+    *[_type == "home"]{
+      seoTitle,
+      seoDescription,
+      seoImage,
+      seoKeywords,
+      title,
+      subtitle,
+      image,
+      button,
+      "videoFileUrl": videoAnimation.fallback.asset->url,
+    }
+  `;
+  const homeData = await client.fetch(homeQuery);
+  
+  const aboutQuery = `
+  *[_type == "about"]{
+    title,
+    subtitle,
+    image,
+    content
+  }
+`;
+  const aboutData = await client.fetch(aboutQuery);
+
+  const carouselQuery = `
+  *[_type == "carousel"] {
+    image 
+  }
+`;
+  const carouselData = await client.fetch(carouselQuery);
+  const servicesQuery = '*[_type == "service"]';
+  const servicesData = await client.fetch(servicesQuery);
+
+
+  return {
+    props: {
+      seoData,
+      carouselData,
+      homeData,
+      aboutData,
+      servicesData,
+    },
+  };
+  }
+  catch(error){
+    console.error(error)
+    return {
+      props: {
+        error: "Failed to fetch data."
+      }
+    };
+  }
+}
+/* export async function getStaticProps() {
   try {
     const seoQuery = `
       *[_type == "seo"]{
@@ -91,4 +167,4 @@ export async function getStaticProps() {
     console.error(error);
     return { props: {} }; 
   }
-}
+} */
