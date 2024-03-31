@@ -13,6 +13,8 @@ const data = Array.isArray(seoData) ? seoData[0] || {} : {};
       <title>{data.pageTitle}</title>
       <meta name="description" content={data.metaDescription} />
       <meta name="keywords" content={Array.isArray(data.metaKeywords) ? data.metaKeywords.join(', ') : data.metaKeywords} />
+      <meta name="author" content="Yana Korobeinyk" />
+      <meta name="image" content={urlFor(data.ogImage).width(630).height(630).quality(100).url()} />
       <link rel="canonical" href={data.canonicalUrl} />
 
       {/* Open Graph / Facebook */}
@@ -51,9 +53,9 @@ const data = Array.isArray(seoData) ? seoData[0] || {} : {};
       <link rel="apple-touch-icon" href="/logo.webp" />
         
       {/* Windows */}
-      <meta name="msapplication-TileColor" content="#ffffff" />
+      <meta name="msapplication-TileColor" content="#f5f5f5" />
       <meta name="msapplication-TileImage" content="/logo.webp" />
-      <meta name="theme-color" content="#ffffff" />
+      <meta name="theme-color" content="#f5f5f5" />
         
       </Head> 
       <header>
