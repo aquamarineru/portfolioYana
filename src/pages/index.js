@@ -9,7 +9,7 @@ import Layout from '@/components/Layout'
 
 
 export default function Home({ carouselData, homeData, servicesData, aboutData, seoData }) {
-console.log(seoData)
+
   return (
     <Layout seoData={seoData}>
         <Cookies />

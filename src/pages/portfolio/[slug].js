@@ -9,7 +9,7 @@ import Head from 'next/head'
 
 
 const Photo = ({ photo }) => {
-    console.log(photo)
+
     const date = format(new Date(photo.publishedDate), 'dd MMMM yyyy')
     return (
         <div>

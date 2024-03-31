@@ -19,7 +19,7 @@ const data = Array.isArray(seoData) ? seoData[0] || {} : {};
       <meta property="og:type" content={data.ogType || 'website'} />
       <meta property="og:title" content={data.ogTitle || data.pageTitle} />
       <meta property="og:description" content={data.ogDescription || data.metaDescription} />
-      <meta property="og:image" content={urlFor(data.ogImage).width(630).height(630).quality(100).url()} />
+      <meta property="og:image" content={urlFor(data.ogImage).width(630).height(630).quality(100).url()} alt={data.ogImage.alt}  />
       <meta property="og:url" content={data.canonicalUrl} />
       <meta property="fb:app_id" content="" />
       <meta property="og:site_name" content="Yana Korobeinyk Photography" />
