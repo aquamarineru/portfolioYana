@@ -9,7 +9,7 @@ function Layout({ children, seoData }) {
 console.log(seoData)
 const data = Array.isArray(seoData) ? seoData[0] || {} : {};
 
-console.log()
+console.log(data.ogTitle)
   return (
     <div>
     <Head>
