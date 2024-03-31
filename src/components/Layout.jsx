@@ -16,17 +16,20 @@ const data = Array.isArray(seoData) ? seoData[0] || {} : {};
       <link rel="canonical" href={data.canonicalUrl} />
 
       {/* Open Graph / Facebook */}
-<meta property="og:type" content={data.ogType || 'website'} />
-<meta property="og:title" content={data.ogTitle || data.pageTitle} />
-<meta property="og:description" content={data.ogDescription || data.metaDescription} />
-<meta property="og:image" content={urlFor(data.ogImage).url()} />
-<meta property="og:url" content={data.canonicalUrl} />
+      <meta property="og:type" content={data.ogType || 'website'} />
+      <meta property="og:title" content={data.ogTitle || data.pageTitle} />
+      <meta property="og:description" content={data.ogDescription || data.metaDescription} />
+      <meta property="og:image" content={urlFor(data.ogImage).width(1200).height(630).quality(100).url()} />
+      <meta property="og:url" content={data.canonicalUrl} />
+      <meta property="fb:app_id" content="" />
+      <meta property="og:site_name" content="Yana Korobeinyk Photography" />
 
-{/* Twitter Card */}
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={data.ogTitle || data.pageTitle} />
-<meta name="twitter:description" content={data.ogDescription || data.metaDescription} />
-<meta name="twitter:image" content={urlFor(data.ogImage).url()} />
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@" /> 
+      <meta name="twitter:title" content={data.ogTitle || data.pageTitle} />
+      <meta name="twitter:description" content={data.ogDescription || data.metaDescription} />
+      <meta name="twitter:image" content={urlFor(data.ogImage).width(1200).height(630).quality(100).url()} />
 
       {/* Additional tags for enhancing discoverability and web standards */}
       <meta name="robots" content={data.robotsDirective || 'index, follow'} />
@@ -41,27 +44,17 @@ const data = Array.isArray(seoData) ? seoData[0] || {} : {};
       {/* Web App Manifest */}
       <link rel="manifest" href="/manifest.json" />
 
-       {/*  <meta property="og:title" content={data.ogTitle} />
-        <meta  property="og:description" content={data.ogDescription} />
-        <meta name="og:image" property="og:image" content={urlFor(data.ogImage).url()} />
-        <meta name="og:type" property="og:type" content={data.ogType} />
-        <meta name="robots" content={data.robotsDirective} />
-        <meta name="url" content={data.canonicalUrl} />
-        <meta name="keywords" content={data.metaKeywords} />
-        <meta name="google-site-verification" content="HOQY6rh1u_zcAir9F2-Tizh8c_N3sndycb7INYWfDUg" />
-        <meta name="p:domain_verify" content="f3749dab05bc8dee0e9227f67939b075"/>
-        <link rel="icon" href="/logo.webp" /> */}
-        {/* <meta property="og:title" content={seoData?.seoTitle || 'Greece Love Story Wedding Portrait Photography | Yana Korobeinyk'} />
-        <meta property="description" name="description" content={seoData?.seoDescription} />
-        <meta property="og:description" name="description" content={seoData.seoDescription} />
-        <meta name="keywords" content="photography, fashion photography, weddings photography, mykonos photography, photographer, wedding photographer" />
-        <meta property="og:image" content="/about.jpg"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <meta name="google-site-verification" content="HOQY6rh1u_zcAir9F2-Tizh8c_N3sndycb7INYWfDUg" />
-        <meta name="p:domain_verify" content="f3749dab05bc8dee0e9227f67939b075"/>
-        <link rel="icon" href="/logo.webp" /> */}
+      {/* iOS Web App */}
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="apple-mobile-web-app-title" content={data.pageTitle} />
+      <link rel="apple-touch-icon" href="/logo.webp" />
+        
+      {/* Windows */}
+      <meta name="msapplication-TileColor" content="#ffffff" />
+      <meta name="msapplication-TileImage" content="/logo.webp" />
+      <meta name="theme-color" content="#ffffff" />
+        
       </Head> 
       <header>
         <Header />
