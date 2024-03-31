@@ -8,10 +8,10 @@ import Cookies from '@/components/Cookies'
 import Layout from '@/components/Layout'
 
 
-export default function Home({ carouselData, homeData, servicesData, aboutData }) {
-
+export default function Home({ carouselData, homeData, servicesData, aboutData, seoData }) {
+console.log(seoData)
   return (
-    <Layout homeData={homeData}>
+    <Layout seoData={seoData}>
         <Cookies />
         <Cover homeData={homeData} />
         <About aboutData={aboutData} />
@@ -24,6 +24,23 @@ export default function Home({ carouselData, homeData, servicesData, aboutData }
 }
 export async function getStaticProps() {
   try {
+    const seoQuery = `
+      *[_type == "seo"]{
+        pageTitle,
+        metaDescription,
+        metaKeywords,
+        robotsDirective,
+        sitemapPriority,
+        noFollowLinks,
+        noIndexPage,
+        canonicalUrl,
+          ogTitle,
+          ogDescription,
+          "ogImage": ogImage.asset->url,
+          ogType
+        
+      }`;
+    const seoData = await client.fetch(seoQuery);
 
     const homeQuery = `
       *[_type == "home"]{
@@ -62,6 +79,7 @@ export async function getStaticProps() {
 
     return {
       props: {
+        seoData,
         carouselData,
         homeData,
         aboutData,
@@ -71,6 +89,6 @@ export async function getStaticProps() {
     };
   } catch (error) {
     console.error(error);
-    return { props: {homeData: []} };
+    return { props: {} }; 
   }
-};
+}

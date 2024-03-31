@@ -2,16 +2,32 @@ import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import Head from 'next/head'
+import { urlFor } from '../../lib/client'
 
-function Layout({ children }) {
+function Layout({ children, seoData }) {
 
+console.log(seoData)
+const data = Array.isArray(seoData) ? seoData[0] || {} : {};
+
+console.log()
   return (
     <div>
-  <Head>
-        <title>{seo?.seoTitle || 'Greece Love Story Wedding Portrait Photography | Yana Korobeinyk '}  </title>
-        <meta property="og:title" content={seo?.seoTitle || 'Greece Love Story Wedding Portrait Photography | Yana Korobeinyk'} />
-        <meta property="description" name="description" content={seo?.seoDescription} />
-        <meta property="og:description" name="description" content={seoDescription} />
+    <Head>
+        <title>{data.pageTitle}  </title>
+        <meta name="description" content={data.metaDescription} />
+        <meta name="og:title" property="og:title" content={data.ogTitle} />
+        <meta name="og:description" property="og:description" content={data.ogDescription} />
+        <meta name="og:image" property="og:image" content={urlFor(data.ogImage).url()} />
+        <meta name="og:type" property="og:type" content={data.ogType} />
+        <meta name="robots" content={data.robotsDirective} />
+        <meta name="url" content={data.canonicalUrl} />
+        <meta name="keywords" content={data.metaKeywords} />
+        <meta name="google-site-verification" content="HOQY6rh1u_zcAir9F2-Tizh8c_N3sndycb7INYWfDUg" />
+        <meta name="p:domain_verify" content="f3749dab05bc8dee0e9227f67939b075"/>
+        <link rel="icon" href="/logo.webp" />
+        {/* <meta property="og:title" content={seoData?.seoTitle || 'Greece Love Story Wedding Portrait Photography | Yana Korobeinyk'} />
+        <meta property="description" name="description" content={seoData?.seoDescription} />
+        <meta property="og:description" name="description" content={seoData.seoDescription} />
         <meta name="keywords" content="photography, fashion photography, weddings photography, mykonos photography, photographer, wedding photographer" />
         <meta property="og:image" content="/about.jpg"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,8 +35,8 @@ function Layout({ children }) {
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="google-site-verification" content="HOQY6rh1u_zcAir9F2-Tizh8c_N3sndycb7INYWfDUg" />
         <meta name="p:domain_verify" content="f3749dab05bc8dee0e9227f67939b075"/>
-        <link rel="icon" href="/logo.webp" />
-      </Head>  
+        <link rel="icon" href="/logo.webp" /> */}
+      </Head> 
       <header>
         <Header />
       </header>

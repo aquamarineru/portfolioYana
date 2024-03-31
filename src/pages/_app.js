@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
 import { useState, useEffect } from 'react';
-import Layout from '@/components/Layout';
+
 
 
 export const useDarkMode = () => {
@@ -19,9 +19,8 @@ export const useDarkMode = () => {
 export default function App({ Component, pageProps }) {
   return (
     <div className="bg-light dark:bg-dark min-h-max">
-      <Layout>
         <Component {...pageProps} />
-      </Layout>
+
     </div>
     )
 }
