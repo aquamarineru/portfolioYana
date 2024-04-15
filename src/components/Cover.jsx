@@ -25,7 +25,7 @@ return (
       </div>
     )}
       <h1 className='px-5 font-tomatoes text-tomatoes text-bold text-md text-center absolute top-[25%] left-[10%] md:left-[30%] md:text-xl lg:left-[25%] lg:text-2xl xl:text-4xl xl:left-[30%]'>{data.title}</h1>
-      <p className='absolute font-nanum top-[33%] uppercase left-[20%] md:left-[40%] md:top-[33%] text-sm'>{data.subtitle}</p>
+      <p className='absolute font-nanum top-[33%] uppercase text-center left-[12%] md:left-[40%] md:top-[33%] text-sm'>{data.subtitle}</p>
       <div className='flex justify-center'>
           <Link href='mailto:yana.korobeinyk@gmail.com' aria-label="Contact me per email"  className='absolute bottom-10 z-[2] px-8 py-2 text-light border bg-tomatoes border-tomatoes rounded hover:bg-hover hover:border-none font-bold uppercase'>{data.button} </Link>
       </div>
