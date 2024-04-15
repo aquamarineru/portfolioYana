@@ -17,9 +17,10 @@ return (
         <Image 
         src={urlFor(data.image).url()}  
         alt={data.image.attribution} 
-        width={1400} 
-        height={800}
-        sizes="(max-width: 600px)"
+        width={1920}
+        height={1080}
+        quality={100}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         priority={true} 
         className='object-cover w-full h-full' />
       </div>
