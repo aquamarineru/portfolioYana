@@ -48,11 +48,11 @@ const Header = () => {
                     priority={true}
                     className="object-contain md:w-14 md:h-14 lg:w-16 lg:h-16"
                 />}
-                <span className='font-ricordi uppercase text-xs'>Photography</span>
+                <span className='font-nanum uppercase text-xs'>Photography</span>
                 </div>
             </Link>
             <div className='flex items-center gap-4 justify-between'>
-                <ul className='hidden sm:flex font-ricordi font-bold uppercase'>
+                <ul className='hidden sm:flex font-nanum font-bold uppercase'>
                     <li className='p-4 '>
                         <Link href="/#about" className='hover:bg-hover px-3 py-2 rounded'>About</Link>
                     </li> 
@@ -82,7 +82,7 @@ const Header = () => {
                     showMenu ? 'left-0' : '-left-full'
                 } right-0 bottom-0 flex flex-col justify-center items-center w-full h-screen bg-light text-center dark:bg-dark`}
                 >
-                    <ul className="font-ricordi uppercase">
+                    <ul className="font-nanum uppercase">
                         <li className="p-4 text-xl " onClick={handleMenu}>
                         <Link href="/#about" className='hover:bg-hover px-3 py-2 rounded'>About</Link>
                         </li>

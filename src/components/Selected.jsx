@@ -87,7 +87,7 @@ if (!carouselData) {
 } 
   return (
     <div className="px-4 py-11 lg:px-14">
-      <h2 className="font-ricordi text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase">
+      <h2 className="font-nanum text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase">
         Selected Work
       </h2>
       <h3 className='font-tomatoes text-xl text-dark dark:text-light text-center font-bold md:text-2xl'>my portfolio</h3>
@@ -106,7 +106,7 @@ if (!carouselData) {
       </Slider>
       <div className="flex justify-center items-center mt-5">
         <Link href="/portfolio">
-          <button className="px-8 py-2 text-light border bg-tomatoes border-tomatoes rounded hover:bg-hover hover:border-none font-ricordi uppercase">
+          <button className="px-8 py-2 text-light border bg-tomatoes border-tomatoes rounded hover:bg-hover hover:border-none font-nanum uppercase">
             View all
           </button>
         </Link>

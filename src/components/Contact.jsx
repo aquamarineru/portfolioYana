@@ -42,7 +42,7 @@ const Contact = () => {
   };
   return (
     <div className='pt-24 md:m-0 font-display' id='contact'>
-      <h2 className='font-ricordi text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase'>Contact me</h2>
+      <h2 className='font-nanum text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase'>Contact me</h2>
       <h3 className='font-tomatoes text-xl text-dark dark:text-light text-center font-bold md:text-2xl'>get in touch</h3>
       <div className='pt-16 px-10 flex flex-col-reverse items-center justify-center md:flex-row md:items-start md:gap-10'>
       <ul className='flex justify-between items-center dark:text-light md:flex-col'>
@@ -134,7 +134,7 @@ const Contact = () => {
                     className="border-[1px] border-tomatoes rounded-md px-3 py-3 mt-2 w-full bg-light dark:bg-dark">
                     </textarea>
                 </div>
-                <button type="submit" className="px-8 py-2 text-light border bg-tomatoes border-tomatoes rounded hover:bg-hover hover:border-none font-ricordi uppercase mt-24">
+                <button type="submit" className="px-8 py-2 text-light border bg-tomatoes border-tomatoes rounded hover:bg-hover hover:border-none font-nanum uppercase mt-24">
             Contact me
         </button>
         </form>

@@ -34,10 +34,10 @@ export default function Portfolio({initialPhotos, total}) {
             <meta property="og:description" name="description" content="Yana Korobeinyk, a renowned photographer from Greece specializing in wedding, romance, and portrait photography, captures your most cherished moments with elegance and passion." />
         </Head>
         <div className="h-full scroll-m-2 w-full pt-28">
-            <Link href={'/'} className="flex items-center gap-3 text-tomatoes font-ricordi font-bold uppercase absolute top-24 left-0 px-3 text-sm md:top-28 md:px-7 lg:top-36 lg:pl-24 lg:text-xl">
+            <Link href={'/'} className="flex items-center gap-3 text-tomatoes font-nanum font-bold uppercase absolute top-24 left-0 px-3 text-sm md:top-28 md:px-7 lg:top-36 lg:pl-24 lg:text-xl">
                <CgArrowLongLeft className="text-tomatoes" size={20}/> Back
             </Link>
-            <h2 className='font-ricordi text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase mb-10'>Portfolio</h2>
+            <h2 className='font-nanum text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase mb-10'>Portfolio</h2>
             <PhotosGrid >
                 {photos.map(photo => {
                     if (photo.slug && photo.slug.current) {
@@ -55,7 +55,7 @@ export default function Portfolio({initialPhotos, total}) {
                 }}
                  onClick={getMorePhotos}
                  disabled={loading}>
-                    <button className='px-8 py-2 text-light border bg-tomatoes border-tomatoes rounded hover:bg-hover hover:border-none font-ricordi uppercase mt-10'>Load More</button>
+                    <button className='px-8 py-2 text-light border bg-tomatoes border-tomatoes rounded hover:bg-hover hover:border-none font-nanum uppercase mt-10'>Load More</button>
                  </div>
             )}
             </div>

@@ -16,7 +16,7 @@ module.exports = {
       },
       fontFamily: {
         tomatoes: ["Tomatoes", "sans-serif"],
-        ricordi: ["Ricordi", "serif"],
+        nanum: ["Nanum Myeongjo", "serif"],
         poppins: ["Poppins", "sans-serif"],
       },
       backgroundImage: {

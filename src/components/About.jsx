@@ -30,7 +30,7 @@ const About = ({aboutData}) => {
 
   return (
       <div className='pt-24 md:m-0 font-display' id='about'>
-        <h2 className='font-ricordi text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase'>{data.title}</h2>
+        <h2 className='font-nanum text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase'>{data.title}</h2>
         <h3 className='font-tomatoes text-xl text-dark dark:text-light text-center font-bold md:text-2xl'>{data.subtitle}</h3>
         
         <div className='p-7 py-16 flex flex-col-reverse items-center justify-center md:flex-row md:items-start md:justify-around lg:justify-center lg:gap-10'>

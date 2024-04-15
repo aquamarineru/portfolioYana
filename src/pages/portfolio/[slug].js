@@ -22,11 +22,11 @@ const Photo = ({ photo }) => {
                 )}
                 <meta property="og:type" content="website" />
             </Head>  
-            <Link href={'/portfolio'} className="flex items-center gap-3 text-tomatoes font-ricordi font-bold uppercase absolute top-24 left-0 px-3 text-sm md:top-28 md:px-7 lg:top-36 lg:pl-24 lg:text-xl">
+            <Link href={'/portfolio'} className="flex items-center gap-3 text-tomatoes fonn-nanum font-bold uppercase absolute top-24 left-0 px-3 text-sm md:top-28 md:px-7 lg:top-36 lg:pl-24 lg:text-xl">
                <CgArrowLongLeft className="text-tomatoes" size={20}/> Back
             </Link>
             <div className='pt-32 px-7'>
-                <h2 className='text-tomatoes font-ricordi text-2xl text-center md:text-4xl md:w-[500px] md:mx-auto lg:text-5xl lg:w-[800px] font-bold uppercase '>{photo.title}</h2>
+                <h2 className='text-tomatoes font-nanum text-2xl text-center md:text-4xl md:w-[500px] md:mx-auto lg:text-5xl lg:w-[800px] font-bold uppercase '>{photo.title}</h2>
                 <p className='text-right text-dark dark:text-light lg:text-lg mb-10'>{date}</p>
                 <Content body={photo.body}/>
             </div>
