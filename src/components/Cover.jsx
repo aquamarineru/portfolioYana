@@ -36,7 +36,7 @@ return (
           {data.subtitle}
         </p>
         <Link
-          href="mailto:yana.korobeinyk@gmail.com"
+          href="mailto:yana.korobeinykphoto@gmail.com"
           aria-label="Contact me per email"
           className="px-6 py-3 bg-tomatoes border border-tomatoes rounded hover:bg-hover hover:border-transparent font-bold uppercase text-light transition"
         >
