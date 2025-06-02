@@ -28,11 +28,11 @@ return (
       <div className="absolute inset-0 bg-white/10 " />
 
       {/* Контент по центру экрана */}
-      <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center text-tomatoes px-4">
-        <h1 className="font-tomatoes text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4">
+      <div className="absolute inset-0 z-10 flex flex-col justify-evenly items-center text-center text-tomatoes px-4 ">
+        <h1 className="font-tomatoes text-2xl pb-8 md:text-4xl lg:text-5xl xl:text-6xl xl:mt-16 font-bold mb-4">
           {data.title}
         </h1>
-        <p className="font-nanum uppercase text-sm md:text-base lg:text-lg mb-6">
+        <p className="font-nanum uppercase text-sm md:text-base lg:text-lg ">
           {data.subtitle}
         </p>
         <Link
