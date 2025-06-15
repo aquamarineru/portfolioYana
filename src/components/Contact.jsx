@@ -48,7 +48,7 @@ const Contact = () => {
       <ul className='flex justify-between items-center dark:text-light md:flex-col'>
         <li className="p-4 hover:text-hover">
           <a 
-          href="https://www.instagram.com/yana.korobeinyk/" 
+          href="https://www.instagram.com/yana.korobeinyk_photo" 
           aria-label="Follow me on instagram" 
           target="_blank" 
           rel="noopener noreferrer">
@@ -57,7 +57,7 @@ const Contact = () => {
         </li>
         <li className="p-4 hover:text-hover">
           <a 
-          href="https://www.tiktok.com/@yana.korobeinyk" 
+          href="https://www.tiktok.com/@yana.korobeinykphoto" 
           aria-label="Follow me on tiktok" 
           target="_blank"
           rel="noopener noreferrer">
