@@ -13,7 +13,7 @@ const Social = () => {
           </Link>
         </li>
         <li className="p-4 hover:text-hover">
-          <Link href="https://www.tiktok.com/@yana.korobeinyk" target='_blank'>
+          <Link href="https://www.tiktok.com/@yana.korobeinykphoto" target='_blank'>
             <FaTiktok size={30} />
           </Link>
         </li>
