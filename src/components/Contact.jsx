@@ -48,7 +48,7 @@ const Contact = () => {
       <ul className='flex justify-between items-center dark:text-light md:flex-col'>
         <li className="p-4 hover:text-hover">
           <a 
-          href="https://www.instagram.com/yana.korobeinyk_photo" 
+          href="https://www.instagram.com/yana.korobeinyk" 
           aria-label="Follow me on instagram" 
           target="_blank" 
           rel="noopener noreferrer">
