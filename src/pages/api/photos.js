@@ -12,10 +12,25 @@ export default async function photos(req, res) {
   res.status(200).json({photos, total})
 }
 export async function loadPhotos (start, end) {
-  const query = `
+const query = `
 {
-  "photos": *[_type == "photo"] | order(publishedDate desc) [${start}...${end}] {_id, title, publishedDate, slug, image},
-  "total": count(*[_type == "photo"])
+  "photos": *[_type == "photo" && hideFromWebsite != true] | order(publishedDate desc) [${start}...${end}] {
+    _id,
+    title,
+    publishedDate,
+    slug,
+    hideFromWebsite,
+    image{
+      ...,
+      asset->{
+        _id,
+        metadata{
+          lqip
+        }
+      }
+    }
+  },
+  "total": count(*[_type == "photo" && hideFromWebsite != true])
 }
 `
   const { photos, total } = await client.fetch(query)

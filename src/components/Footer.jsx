@@ -8,7 +8,7 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} All rights reserved.
         </p>
         <p className="text-xs mt-2 text-dark dark:text-light">
-          Created by <a href="https://codecrafters.online" target="_blank" rel="noopener noreferrer" className="underline">codecrafters.online</a>
+          Created with love for Yana by <a href="https://impacttech.gr/" target="_blank" rel="noopener noreferrer" className="underline">Impact Tech</a>
         </p>
       </div>
     </div>

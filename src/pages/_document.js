@@ -5,6 +5,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <link rel="icon" href="/logo.webp" type="image/webp" />
+        <link rel="shortcut icon" href="/logo.webp" type="image/webp" />
+        <link rel="apple-touch-icon" href="/logo.webp" />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-148SJTXCS0" defer />
           <Script id="google-analytics" strategy="beforeInteractive" defer>
             {`

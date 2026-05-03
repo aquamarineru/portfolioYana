@@ -5,12 +5,14 @@ import Photo from "../components/Photo"
 import Head from "next/head"
 import Link from "next/link"
 import { CgArrowLongLeft } from 'react-icons/cg'
+import Header from "@/components/Header"
 
 const LOAD_MORE = 6
 export default function Portfolio({initialPhotos, total}) {
     const [photos, setPhotos] = useState(initialPhotos)
     const [loadedAmount, setLoadedAmount] = useState(LOAD_MORE)
     const [ loading, setLoading ] = useState(false)
+    const visiblePhotos = photos.filter((photo) => photo?.slug?.current && photo.hideFromWebsite !== true)
 
     const isLoadButtonVisible = loadedAmount < total
 
@@ -28,24 +30,21 @@ export default function Portfolio({initialPhotos, total}) {
     }
     return (
         <>
+        <Header />
         <Head>
             <title>Photography Portfolio | Weddings, Love Story & Portraits in Mykonos Island</title>
             <meta property="og:title" name="title" content="Photography Portfolio | Weddings, Love Story & Portraits in Mykonos Island Greece" />
             <meta property="og:description" name="description" content="Yana Korobeinyk, a renowned photographer from Greece specializing in wedding, romance, and portrait photography, captures your most cherished moments with elegance and passion." />
         </Head>
-        <div className="h-full scroll-m-2 w-full pt-28">
-            <Link href={'/'} className="flex items-center gap-3 text-tomatoes font-nanum font-bold uppercase absolute top-24 left-0 px-3 text-sm md:top-28 md:px-7 lg:top-36 lg:pl-24 lg:text-xl">
+        <div className="relative min-h-screen scroll-m-2 w-full pt-44 md:pt-48">
+            <Link href={'/'} className="absolute left-0 top-32 flex items-center gap-3 px-3 text-sm font-bold uppercase text-tomatoes md:px-7 lg:pl-24 lg:text-xl">
                <CgArrowLongLeft className="text-tomatoes" size={20}/> Back
             </Link>
             <h2 className='font-nanum text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase mb-10'>Portfolio</h2>
             <PhotosGrid >
-                {photos.map(photo => {
-                    if (photo.slug && photo.slug.current) {
-                        return <Photo key={photo.slug.current} {...photo} />;
-                      }
-                }
-
-                )}
+                {visiblePhotos.map((photo) => (
+                    <Photo key={photo.slug.current} {...photo} />
+                ))}
             </PhotosGrid>
             {isLoadButtonVisible && (
                 <div

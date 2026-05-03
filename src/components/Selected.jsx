@@ -39,8 +39,16 @@ const PrevArrow = ({ onClick }) => {
   );
 }
 
+const getBlurProps = (image) => {
+  const blurDataURL = image?.asset?.metadata?.lqip
 
-const Selected = ({ carouselData }) => {
+  return blurDataURL ? {placeholder: 'blur', blurDataURL} : {}
+}
+
+
+const Selected = ({ carouselData, sectionText }) => {
+  const description = sectionText?.selectedWorkDescription ?? 'my portfolio';
+
   const settings = {
     infinite: true,
     speed: 500,
@@ -90,16 +98,18 @@ if (!carouselData) {
       <h2 className="font-nanum text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase">
         Selected Work
       </h2>
-      <h3 className='font-tomatoes text-xl text-dark dark:text-light text-center font-bold md:text-2xl'>my portfolio</h3>
+      <h3 className='font-tomatoes text-xl text-dark dark:text-light text-center font-bold md:text-2xl'>{description}</h3>
       <Slider {...settings} className='mt-10 m-auto'>
         {carouselData.map((slide, index) => (
           <div className="flex flex-col items-center m-auto" key={index}>
             <Image
-              src={urlFor(slide.image.asset).url()}
+              src={urlFor(slide.image).width(520).height(680).quality(76).auto('format').url()}
               alt={slide.image.caption || slide.meta_title}
-              width={300}
-              height={300}
+              width={350}
+              height={450}
+              sizes="(max-width: 480px) 88vw, (max-width: 800px) 44vw, 350px"
               className="rounded m-auto object-cover w-[350px] h-[450px] z-0 items-center"
+              {...getBlurProps(slide.image)}
             />
           </div>
         ))}

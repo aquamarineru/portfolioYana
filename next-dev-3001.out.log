@@ -1,0 +1,12 @@
+
+> portfolioYana@0.1.0 dev
+> next dev -p 3001
+
+ready - started server on 0.0.0.0:3001, url: http://localhost:3001
+[36minfo[39m  - Loaded env from C:\Users\Kolpa\Desktop\Works\yana\portfolioYana\.env
+[35mevent[39m - compiled client and server successfully in 2s (185 modules)
+[36mwait[39m  - compiling...
+[35mevent[39m - compiled successfully in 102 ms (146 modules)
+[36mwait[39m  - compiling /portfolio/[slug] (client and server)...
+[35mevent[39m - compiled client and server successfully in 1592 ms (806 modules)
+[36mwait[39m  - compiling...

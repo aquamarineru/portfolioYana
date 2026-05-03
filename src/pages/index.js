@@ -8,16 +8,25 @@ import Cookies from '@/components/Cookies'
 import Layout from '@/components/Layout'
 
 
-export default function Home({ carouselData, homeData, servicesData, aboutData, seoData }) {
+export default function Home({
+  carouselData,
+  contactData,
+  homeData,
+  servicesData,
+  aboutData,
+  seoData,
+  socialSettings,
+  sectionText,
+}) {
 
   return (
     <Layout seoData={seoData}>
         <Cookies />
         <Cover homeData={homeData} />
-        <About aboutData={aboutData} />
-        <Selected carouselData={carouselData} />
-        <MyServices servicesData={servicesData} />
-        <Contact />
+        <About aboutData={aboutData} socialSettings={socialSettings} sectionText={sectionText} />
+        <Selected carouselData={carouselData} sectionText={sectionText} />
+        <MyServices servicesData={servicesData} sectionText={sectionText} />
+        <Contact contactData={contactData} socialSettings={socialSettings} socialLinks={aboutData?.[0]?.socialLinks} sectionText={sectionText} />
 
     </Layout>
   )
@@ -52,7 +61,10 @@ export async function getStaticProps() {
         title,
         subtitle,
         image,
+        imageFilterSettings,
+        imageOverlay,
         button,
+        secondaryButton,
         "videoFileUrl": videoAnimation.fallback.asset->url,
       }
     `;
@@ -61,20 +73,58 @@ export async function getStaticProps() {
     const aboutQuery = `
     *[_type == "about"]{
       title,
-      subtitle,
       image,
-      content
+      content,
+      socialLinks
     }
   `;
     const aboutData = await client.fetch(aboutQuery);
 
+    const contactQuery = `
+    *[_type == "contact"]{
+      title,
+      imageSrc
+    }
+  `;
+    const contactData = await client.fetch(contactQuery);
+
+    const socialSettingsQuery = `
+    *[_type == "socialSettings"][0]{
+      instagram,
+      tiktok,
+      facebook,
+      whatsapp,
+      telegram,
+      viber
+    }
+  `;
+    const socialSettings = await client.fetch(socialSettingsQuery);
+
+    const sectionTextQuery = `
+    *[_type == "sectionText" && !(_id in path("drafts.**"))][0]{
+      aboutDescription,
+      selectedWorkDescription,
+      myServicesDescription,
+      contactDescription
+    }
+  `;
+    const sectionText = await client.fetch(sectionTextQuery);
+
     const carouselQuery = `
-    *[_type == "carousel"] {
-      image 
+    *[_type == "carousel" && !(_id in path("drafts.**")) && hideFromWebsite != true] {
+      image{
+        ...,
+        asset->{
+          _id,
+          metadata{
+            lqip
+          }
+        }
+      }
     }
   `;
     const carouselData = await client.fetch(carouselQuery);
-    const servicesQuery = '*[_type == "service"]';
+    const servicesQuery = '*[_type == "service" && !(_id in path("drafts.**")) && hideFromWebsite != true]';
     const servicesData = await client.fetch(servicesQuery);
 
 
@@ -82,9 +132,12 @@ export async function getStaticProps() {
       props: {
         seoData,
         carouselData,
+        contactData,
         homeData,
         aboutData,
         servicesData,
+        socialSettings,
+        sectionText,
       },
       revalidate: 60,
     };
@@ -144,7 +197,7 @@ export async function getStaticProps() {
   }
 `;
   const carouselData = await client.fetch(carouselQuery);
-  const servicesQuery = '*[_type == "service"]';
+  const servicesQuery = '*[_type == "service" && !(_id in path("drafts.**"))]';
   const servicesData = await client.fetch(servicesQuery);
 
 

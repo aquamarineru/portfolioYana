@@ -4,8 +4,9 @@ import Social from './Social'
 import BlockContent from '@sanity/block-content-to-react'
 import { clientConfig, urlFor } from '../../lib/client'
 
-const About = ({aboutData}) => {
+const About = ({aboutData, socialSettings, sectionText}) => {
   const data = aboutData?.[0] || {};
+  const description = sectionText?.aboutDescription ?? 'get to know me';
   
   // Corrected serializers object
   const serializers = {
@@ -18,7 +19,7 @@ const About = ({aboutData}) => {
       // Add serializers for other types as needed, for example 'image'
       image: props => (
         <Image 
-          src={urlFor(props.node.asset).url()} 
+          src={urlFor(props.node.asset).width(900).quality(78).auto('format').url()} 
           alt={props.node.alt} 
           layout="responsive"
           width={props.node.asset.metadata.dimensions.width} 
@@ -31,7 +32,7 @@ const About = ({aboutData}) => {
   return (
       <div className='pt-24 md:m-0 font-display' id='about'>
         <h2 className='font-nanum text-2xl text-tomatoes text-center md:text-4xl lg:text-5xl font-bold uppercase'>{data.title}</h2>
-        <h3 className='font-tomatoes text-xl text-dark dark:text-light text-center font-bold md:text-2xl'>{data.subtitle}</h3>
+        <h3 className='font-tomatoes text-xl text-dark dark:text-light text-center font-bold md:text-2xl'>{description}</h3>
         
         <div className='p-7 py-16 flex flex-col-reverse items-center justify-center md:flex-row md:items-start md:justify-around lg:justify-center lg:gap-10'>
             <div className='m-auto flex flex-col items-center text-center gap-5 md:max-w-[400px] md:text-left md:m-0 '>
@@ -41,18 +42,17 @@ const About = ({aboutData}) => {
                   projectId={clientConfig.projectId}
                   dataset={clientConfig.dataset}
                   className="text-dark dark:text-light block-content" />
-                <Social className="mt-5" />
+                <Social socialSettings={socialSettings} socialLinks={data.socialLinks} className="mt-5" />
             </div>
             {data.image && (
                 <div className="flex flex-wrap justify-center mb-5">
                   <Image
-                    src={urlFor(data.image).url()} 
+                    src={urlFor(data.image).width(640).quality(78).auto('format').url()} 
                     alt='about'
-                    width={200}
-                    height={400}
-                    sizes='(max-width: 768px) 100vw, 400px'
+                    width={320}
+                    height={480}
+                    sizes='(max-width: 768px) 70vw, 320px'
                     className='rounded-full object-cover z-0 md:w-[280px] md:h-auto md:rounded-none lg:w-auto'
-                    priority={true}
                   />
                 </div>
             )}

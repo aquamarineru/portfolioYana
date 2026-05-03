@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { CgArrowLongLeft } from 'react-icons/cg'
 import Content from '@/components/Content'
 import Head from 'next/head'
+import Header from '@/components/Header'
 
 
 
@@ -13,6 +14,7 @@ const Photo = ({ photo }) => {
     const date = format(new Date(photo.publishedDate), 'dd MMMM yyyy')
     return (
         <div>
+            <Header />
             <Head>
                 <title>{photo.meta_title}</title>
                 <meta property="og:title" content={photo.meta_title} />
@@ -22,10 +24,10 @@ const Photo = ({ photo }) => {
                 )}
                 <meta property="og:type" content="website" />
             </Head>  
-            <Link href={'/portfolio'} className="flex items-center gap-3 text-tomatoes fonn-nanum font-bold uppercase absolute top-24 left-0 px-3 text-sm md:top-28 md:px-7 lg:top-36 lg:pl-24 lg:text-xl">
+            <Link href={'/portfolio'} className="absolute left-0 top-32 flex items-center gap-3 px-3 text-sm font-bold uppercase text-tomatoes md:px-7 lg:pl-24 lg:text-xl">
                <CgArrowLongLeft className="text-tomatoes" size={20}/> Back
             </Link>
-            <div className='pt-32 px-7'>
+            <div className='px-7 pt-44 md:pt-48'>
                 <h2 className='text-tomatoes font-nanum text-2xl text-center md:text-4xl md:w-[500px] md:mx-auto lg:text-5xl lg:w-[800px] font-bold uppercase '>{photo.title}</h2>
                 <p className='text-right text-dark dark:text-light lg:text-lg mb-10'>{date}</p>
                 <Content body={photo.body}/>
@@ -36,31 +38,36 @@ const Photo = ({ photo }) => {
 export default Photo
 
 export async function getStaticPaths() {
-    const query = `*[_type == "photo" && defined(slug.current)] {
-        'slug': slug.current
-    }`
-    const photos = await client.fetch(query)
-
-    if (!photos) {
-        return {
-            notFound: true,
-        }
-    }
-
-    const paths = photos.map((photo) => ({
-        params: { slug: String(photo.slug) },
-    }))
-
     return {
-        paths,
+        paths: [],
         fallback: 'blocking',
     }
 }
 
 
 export async function getStaticProps({ params: { slug } }) {
-    const query = `*[_type == "photo" && slug.current == '${slug}'][0]`
-    const photo = await client.fetch(query, { slug })
+    const decodedSlug = decodeURIComponent(slug)
+    const query = `
+      *[_type == "photo" && slug.current == $slug && hideFromWebsite != true][0]{
+        ...,
+        body[]{
+          ...,
+          asset->{
+            _id,
+            metadata{
+              lqip
+            }
+          }
+        }
+      }
+    `
+    const photo = await client.fetch(query, { slug: decodedSlug })
+
+    if (!photo) {
+        return {
+            notFound: true,
+        }
+    }
 
     return {
         props: {

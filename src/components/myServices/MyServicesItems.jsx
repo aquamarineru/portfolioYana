@@ -8,12 +8,12 @@ function MyServicesItems({item}) {
       
         {item.imageSrc && (
           <Image
-          src={urlFor(item.imageSrc.asset._ref).url()}
+          src={urlFor(item.imageSrc).width(720).quality(78).auto('format').url()}
           alt={item.title}
-          className="object-cov-auto md:object-cover md:w-[200px] lg:w-[400px]"
+          className="h-auto w-full max-w-[360px] object-contain md:w-[260px] lg:w-[400px]"
           width={400}
           height={600}
-          priority
+          sizes="(max-width: 768px) 82vw, (max-width: 1024px) 260px, 400px"
           />
         )}
         <div className="flex flex-col text-center mt-5 gap-8 md:max-w-[200px] lg:max-w-[250px]">
