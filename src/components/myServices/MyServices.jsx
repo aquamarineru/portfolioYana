@@ -1,7 +1,6 @@
 import React, {useEffect, useMemo, useState} from 'react'
 import MyServicesItems from './MyServicesItems'
 
-const SERVICE_ORDER = ['hospitality', 'portrait', 'wedding', 'love story', 'family']
 const SERVICE_KEY_ALIASES = {
   portraits: 'portrait',
   'hotels and foods': 'hospitality',
@@ -17,26 +16,11 @@ const normalizeServiceKey = (value) => {
 
 const getServiceKey = (service) => normalizeServiceKey(service?.name || service?.title)
 
-const getServiceOrder = (service) => {
-  const order = SERVICE_ORDER.indexOf(getServiceKey(service))
-
-  return order === -1 ? SERVICE_ORDER.length : order
-}
-
 const getUniqueServices = (services = []) => {
   const uniqueServices = new Map()
 
   services
     .filter((service) => service?._id && !service._id.startsWith('drafts.') && service.hideFromWebsite !== true)
-    .sort((a, b) => {
-      const orderDiff = getServiceOrder(a) - getServiceOrder(b)
-
-      if (orderDiff !== 0) {
-        return orderDiff
-      }
-
-      return (a.title || '').localeCompare(b.title || '')
-    })
     .forEach((service) => {
       const key = getServiceKey(service)
 

@@ -111,7 +111,7 @@ export async function getStaticProps() {
     const sectionText = await client.fetch(sectionTextQuery);
 
     const carouselQuery = `
-    *[_type == "carousel" && !(_id in path("drafts.**")) && hideFromWebsite != true] {
+    *[_type == "carousel" && !(_id in path("drafts.**")) && hideFromWebsite != true] | order(coalesce(orderRank, "zzzzzz") asc, _createdAt asc) {
       image{
         ...,
         asset->{
@@ -124,7 +124,7 @@ export async function getStaticProps() {
     }
   `;
     const carouselData = await client.fetch(carouselQuery);
-    const servicesQuery = '*[_type == "service" && !(_id in path("drafts.**")) && hideFromWebsite != true]';
+    const servicesQuery = '*[_type == "service" && !(_id in path("drafts.**")) && hideFromWebsite != true] | order(coalesce(orderRank, "zzzzzz") asc, _createdAt asc)';
     const servicesData = await client.fetch(servicesQuery);
 
 

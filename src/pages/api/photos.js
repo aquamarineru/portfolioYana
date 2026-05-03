@@ -14,11 +14,12 @@ export default async function photos(req, res) {
 export async function loadPhotos (start, end) {
 const query = `
 {
-  "photos": *[_type == "photo" && hideFromWebsite != true] | order(publishedDate desc) [${start}...${end}] {
+  "photos": *[_type == "photo" && hideFromWebsite != true] | order(coalesce(orderRank, "zzzzzz") asc, publishedDate desc) [${start}...${end}] {
     _id,
     title,
     publishedDate,
     slug,
+    orderRank,
     hideFromWebsite,
     image{
       ...,
