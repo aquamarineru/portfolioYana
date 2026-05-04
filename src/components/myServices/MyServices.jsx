@@ -64,8 +64,8 @@ const MyServices = ({servicesData, sectionText}) => {
       <h3 className="font-tomatoes text-xl text-dark dark:text-light text-center font-bold md:text-2xl">
         {description}
       </h3>
-      <div className="pt-16 flex flex-col items-center justify-center md:flex-row md:items-start md:justify-around lg:justify-center">
-        <div className="space-y-4 pt-5 lg:px-32 font-nanum uppercase relative text-dark dark:text-light">
+      <div className="flex flex-col items-center justify-center gap-8 pt-10 md:flex-row md:items-start md:justify-around md:gap-0 md:pt-16 lg:justify-center">
+        <div className="relative space-y-4 pt-5 font-nanum uppercase text-dark dark:text-light lg:px-32">
           {services.map((service) => {
             const serviceKey = getServiceKey(service)
             const isActive = serviceKey === getServiceKey(activeService)

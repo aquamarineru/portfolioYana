@@ -158,7 +158,7 @@ const ServiceImageCollage = ({images, title}) => {
   }
 
   return (
-    <div className="service-collage-stage relative h-[500px] w-full max-w-[360px] shrink-0 md:h-[560px] md:w-[360px] lg:h-[600px] lg:w-[430px]">
+    <div className="service-collage-stage relative h-[430px] w-full max-w-[330px] shrink-0 md:h-[560px] md:w-[360px] md:max-w-[360px] lg:h-[600px] lg:w-[430px] lg:max-w-[430px]">
       {collageImages.map((image, index) => (
         <button
           type="button"
@@ -211,7 +211,7 @@ function MyServicesItems({item}) {
     : []
 
   return (
-    <div className="service-panel-enter mt-5 flex flex-col items-center md:flex-row md:gap-5 lg:justify-around lg:gap-10">
+    <div className="service-panel-enter mt-8 flex flex-col items-center md:mt-5 md:flex-row md:gap-5 lg:justify-around lg:gap-10">
       {serviceImages.length > 0 ? (
         <ServiceImageCollage images={serviceImages} title={item.title} />
       ) : (
@@ -226,7 +226,7 @@ function MyServicesItems({item}) {
           />
         )
       )}
-      <div className="service-copy-enter mt-5 flex flex-col gap-8 text-center md:max-w-[200px] lg:max-w-[250px]">
+      <div className="service-copy-enter mt-12 flex flex-col gap-6 text-center md:mt-5 md:max-w-[200px] md:gap-8 lg:max-w-[250px]">
         <h3 className="gap-5 font-nanum text-sm font-bold uppercase leading-snug text-dark dark:text-light md:text-base">
           {item.title}
         </h3>
