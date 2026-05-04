@@ -43,3 +43,157 @@
 .block-content {
   margin-bottom: 1em;
 }
+
+@keyframes service-panel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes service-photo-enter {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes service-copy-enter {
+  from {
+    opacity: 0;
+    transform: translateX(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes service-photo-float-3d {
+  0%,
+  100% {
+    transform: perspective(900px)
+      translate3d(0, var(--service-float-from, -8px), 0)
+      rotateX(var(--service-rotate-x, 4deg))
+      rotateY(var(--service-rotate-y, -6deg))
+      rotateZ(var(--service-rotate-z, -2deg))
+      scale(1);
+  }
+  50% {
+    transform: perspective(900px)
+      translate3d(0, var(--service-float-to, 10px), 0)
+      rotateX(var(--service-rotate-x-to, 0deg))
+      rotateY(var(--service-rotate-y-to, 6deg))
+      rotateZ(var(--service-rotate-z-to, 1deg))
+      scale(1.025);
+  }
+}
+
+.service-panel-enter {
+  animation: service-panel-enter 520ms ease-out both;
+}
+
+.service-collage-stage {
+  isolation: isolate;
+}
+
+.service-collage-item {
+  cursor: grab;
+  touch-action: none;
+  transition: transform 240ms ease, filter 240ms ease;
+  will-change: transform;
+}
+
+.service-collage-item:active {
+  cursor: grabbing;
+}
+
+.service-collage-float {
+  animation: service-photo-float-3d var(--service-float-duration, 6.8s) ease-in-out infinite;
+  animation-delay: calc(var(--service-photo-index, 0) * -1.2s);
+  will-change: transform;
+}
+
+.service-collage-float-paused {
+  animation-play-state: paused;
+}
+
+.service-collage-frame {
+  animation: service-photo-enter 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--service-photo-index, 0) * 95ms);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  transform: translateZ(0);
+  transition: box-shadow 260ms ease, transform 260ms ease, filter 260ms ease;
+  will-change: transform, opacity, box-shadow;
+  backface-visibility: hidden;
+  contain: paint;
+}
+
+.service-collage-frame-active {
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.22), 0 2px 10px rgba(0, 0, 0, 0.12);
+  filter: saturate(1.04) contrast(1.02);
+}
+
+.service-collage-frame-dragging {
+  transform: scale(1.045) rotate(0.6deg);
+  box-shadow: 0 30px 64px rgba(0, 0, 0, 0.28), 0 8px 18px rgba(0, 0, 0, 0.14);
+}
+
+.service-collage-shine {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0) 42%);
+  mix-blend-mode: screen;
+  opacity: 0.5;
+  transition: opacity 260ms ease;
+}
+
+.service-collage-item-active .service-collage-shine,
+.service-collage-item-dragging .service-collage-shine {
+  opacity: 0.72;
+}
+
+.service-single-image {
+  animation: service-photo-enter 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.service-copy-enter {
+  animation: service-copy-enter 560ms ease-out 180ms both;
+}
+
+.service-tab-item {
+  transform-origin: left center;
+}
+
+.service-tab-item[aria-current="true"] {
+  animation: service-panel-enter 420ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-panel-enter,
+  .service-collage-float,
+  .service-collage-frame,
+  .service-single-image,
+  .service-copy-enter,
+  .service-tab-item[aria-current="true"] {
+    animation: none;
+  }
+
+  .service-tab-item,
+  .service-collage-item,
+  .service-collage-float,
+  .service-collage-frame,
+  .service-collage-frame img {
+    transition: none;
+  }
+}

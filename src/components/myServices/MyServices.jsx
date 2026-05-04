@@ -75,7 +75,8 @@ const MyServices = ({servicesData, sectionText}) => {
                 type="button"
                 onClick={() => setActiveKey(serviceKey)}
                 key={service._id}
-                className={`block cursor-pointer appearance-none border-0 bg-transparent p-0 text-left font-nanum uppercase ${isActive ? 'text-tomatoes before-element relative' : ''}`}
+                aria-current={isActive ? 'true' : undefined}
+                className={`service-tab-item block cursor-pointer appearance-none border-0 bg-transparent p-0 text-left font-nanum uppercase transition duration-300 hover:translate-x-1 hover:text-tomatoes focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tomatoes focus-visible:ring-offset-4 focus-visible:ring-offset-light dark:focus-visible:ring-offset-dark ${isActive ? 'text-tomatoes before-element relative' : ''}`}
               >
                 {service.title}
               </button>
